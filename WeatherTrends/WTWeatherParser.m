@@ -31,13 +31,18 @@
 }
 
 - (void)parseWeatherData:(NSData *)weatherData {
-    NSString *dataString = [[NSString alloc] initWithData:weatherData encoding:NSUTF8StringEncoding];
-    NSArray *components = [dataString componentsSeparatedByString:@"\n"];
-    WTLocation *location = [self parsedLacationFromComponents:components[1]];
-    NSArray *yearMonthArray = [components subarrayWithRange:NSMakeRange(7, components.count-7)];
-    NSSet *yearsSet = [self yearsFromComponents:yearMonthArray];
+    NSString *weatherDataString = [[NSString alloc] initWithData:weatherData encoding:NSUTF8StringEncoding];
+    NSArray *weatherComponents = [weatherDataString componentsSeparatedByString:@"\n"];
     
-    [self parseCityWithName:components[0] location:location years:yearsSet];
+    if (![self cityByName:weatherComponents[0]]) {
+        NSArray *arrayWithoutEmptyComponents = [self arrayWithoutEmptyComponentsFromSourceArray:weatherComponents];
+        WTLocation *location = [self parsedLacationFromComponents:arrayWithoutEmptyComponents[1]];
+        NSRange yearsMonthRange = NSMakeRange(7, arrayWithoutEmptyComponents.count-7);
+        NSArray *yearMonthArray = [arrayWithoutEmptyComponents subarrayWithRange:yearsMonthRange];
+        NSSet *yearsSet = [self yearsFromComponents:yearMonthArray];
+        
+        [self parseCityWithName:arrayWithoutEmptyComponents[0] location:location years:yearsSet];
+    }
 }
 
 - (WTLocation *)parsedLacationFromComponents:(NSString *)components {
@@ -68,20 +73,18 @@
     WTYear *year;
     
     for (NSString *component in components) {
-        if (component.length != 0) {
-            NSArray *yearMonthComponents = [self seperatedComponentsFromString:component];
+        NSArray *yearMonthComponents = [self seperatedComponentsFromString:component];
+        
+        if (![currentYear isEqualToString:yearMonthComponents[0]]) {
+            year = [NSEntityDescription insertNewObjectForEntityForName:@"WTYear"
+                                                 inManagedObjectContext:_managedObjectContext];
+           
+            year.number = yearMonthComponents[0];
+            currentYear = year.number;
             
-            if (![currentYear isEqualToString:yearMonthComponents[0]]) {
-                year = [NSEntityDescription insertNewObjectForEntityForName:@"WTYear"
-                                                     inManagedObjectContext:_managedObjectContext];
-               
-                year.number = yearMonthComponents[0];
-                currentYear = year.number;
-                
-                [yearsSet addObject:year];
-            }
-            [year addMonthsObject:[self parsedMonthFromComponents:yearMonthComponents]];
+            [yearsSet addObject:year];
         }
+        [year addMonthsObject:[self parsedMonthFromComponents:yearMonthComponents]];
     }
     
     return yearsSet;
@@ -99,6 +102,25 @@
     month.sunAmount = components[6];
 
     return month;
+}
+
+- (WTCity *)cityByName:(NSString *)cityName {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", cityName];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    request.entity = entity;
+    request.predicate = predicate;
+    request.sortDescriptors = [[NSArray alloc] init];
+    
+    NSError *error = nil;
+    WTCity *city = [[self.managedObjectContext executeFetchRequest:request error:&error] firstObject];
+    
+    if (error) {
+        NSLog(@"%@", [error description]);
+    }
+    
+    return city;
 }
 
 #pragma mark - Helper

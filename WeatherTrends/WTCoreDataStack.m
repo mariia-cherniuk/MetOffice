@@ -58,6 +58,8 @@
         NSLog(@"%@", [error description]);
     }
     
+    NSLog(@"%@", storeURL);
+    
     return _persistentStoreCoordinator;
 }
 
@@ -70,6 +72,10 @@
     _managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     
     return _managedObjectContext;
+}
+
+- (void)saveObjects:(NSDictionary *)results {
+    
 }
 
 - (void)saveToStorage {

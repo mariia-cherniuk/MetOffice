@@ -17,7 +17,7 @@
 
 + (instancetype)sharedCoreDataStack;
 
-
+- (void)saveObjects:(NSDictionary *)results;
 - (void)saveToStorage;
 
 
