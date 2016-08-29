@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		846B67531D74819200399068 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67521D74819200399068 /* main.m */; };
+		846B67561D74819200399068 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67551D74819200399068 /* AppDelegate.m */; };
+		846B67591D74819200399068 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67581D74819200399068 /* ViewController.m */; };
+		846B675C1D74819200399068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675A1D74819200399068 /* Main.storyboard */; };
+		846B675E1D74819200399068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B675D1D74819200399068 /* Assets.xcassets */; };
+		846B67611D74819200399068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675F1D74819200399068 /* LaunchScreen.storyboard */; };
+		846B676B1D7481DA00399068 /* WTWeatherParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B676A1D7481DA00399068 /* WTWeatherParser.m */; };
+		846B67731D7482B200399068 /* WeatherTrendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67721D7482B200399068 /* WeatherTrendsTests.m */; };
+		846B677B1D7482C600399068 /* weather_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846B677A1D7482C600399068 /* weather_data.txt */; };
+		846B677E1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */; };
+		846B67991D7497EE00399068 /* WTDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67981D7497EE00399068 /* WTDownloader.m */; };
+		846B679C1D74A32200399068 /* WTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B679B1D74A32200399068 /* WTCoreDataStack.m */; };
+		846B67DD1D74AA5C00399068 /* WTMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */; };
+		846B67DE1D74AA5C00399068 /* WTMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D01D74AA5C00399068 /* WTMonth.m */; };
+		846B67DF1D74AA5C00399068 /* WTYear+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */; };
+		846B67E01D74AA5C00399068 /* WTYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D41D74AA5C00399068 /* WTYear.m */; };
+		846B67E11D74AA5C00399068 /* WTCity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */; };
+		846B67E21D74AA5C00399068 /* WTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D81D74AA5C00399068 /* WTCity.m */; };
+		846B67E31D74AA5C00399068 /* WTLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */; };
+		846B67E41D74AA5C00399068 /* WTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DC1D74AA5C00399068 /* WTLocation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		846B67751D7482B200399068 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846B67461D74819200399068 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846B674D1D74819200399068;
+			remoteInfo = WeatherTrends;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		846B674E1D74819200399068 /* WeatherTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		846B67521D74819200399068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		846B67541D74819200399068 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		846B67551D74819200399068 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		846B67571D74819200399068 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		846B67581D74819200399068 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		846B675B1D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		846B675D1D74819200399068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846B67601D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		846B67621D74819200399068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846B67691D7481DA00399068 /* WTWeatherParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWeatherParser.h; sourceTree = "<group>"; };
+		846B676A1D7481DA00399068 /* WTWeatherParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWeatherParser.m; sourceTree = "<group>"; };
+		846B67701D7482B200399068 /* WeatherTrendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTrendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846B67721D7482B200399068 /* WeatherTrendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherTrendsTests.m; sourceTree = "<group>"; };
+		846B67741D7482B200399068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846B677A1D7482C600399068 /* weather_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weather_data.txt; sourceTree = "<group>"; };
+		846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherTrendsModel.xcdatamodel; sourceTree = "<group>"; };
+		846B67971D7497EE00399068 /* WTDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDownloader.h; sourceTree = "<group>"; };
+		846B67981D7497EE00399068 /* WTDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDownloader.m; sourceTree = "<group>"; };
+		846B679A1D74A32200399068 /* WTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCoreDataStack.h; sourceTree = "<group>"; };
+		846B679B1D74A32200399068 /* WTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCoreDataStack.m; sourceTree = "<group>"; };
+		846B67CD1D74AA5C00399068 /* WTMonth+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMonth+CoreDataProperties.h"; path = "WeatherTrends/WTMonth+CoreDataProperties.h"; sourceTree = "<group>"; };
+		846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMonth+CoreDataProperties.m"; path = "WeatherTrends/WTMonth+CoreDataProperties.m"; sourceTree = "<group>"; };
+		846B67CF1D74AA5C00399068 /* WTMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMonth.h; path = WeatherTrends/WTMonth.h; sourceTree = "<group>"; };
+		846B67D01D74AA5C00399068 /* WTMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMonth.m; path = WeatherTrends/WTMonth.m; sourceTree = "<group>"; };
+		846B67D11D74AA5C00399068 /* WTYear+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTYear+CoreDataProperties.h"; path = "WeatherTrends/WTYear+CoreDataProperties.h"; sourceTree = "<group>"; };
+		846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTYear+CoreDataProperties.m"; path = "WeatherTrends/WTYear+CoreDataProperties.m"; sourceTree = "<group>"; };
+		846B67D31D74AA5C00399068 /* WTYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTYear.h; path = WeatherTrends/WTYear.h; sourceTree = "<group>"; };
+		846B67D41D74AA5C00399068 /* WTYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTYear.m; path = WeatherTrends/WTYear.m; sourceTree = "<group>"; };
+		846B67D51D74AA5C00399068 /* WTCity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTCity+CoreDataProperties.h"; path = "WeatherTrends/WTCity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTCity+CoreDataProperties.m"; path = "WeatherTrends/WTCity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		846B67D71D74AA5C00399068 /* WTCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTCity.h; path = WeatherTrends/WTCity.h; sourceTree = "<group>"; };
+		846B67D81D74AA5C00399068 /* WTCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTCity.m; path = WeatherTrends/WTCity.m; sourceTree = "<group>"; };
+		846B67D91D74AA5C00399068 /* WTLocation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTLocation+CoreDataProperties.h"; path = "WeatherTrends/WTLocation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTLocation+CoreDataProperties.m"; path = "WeatherTrends/WTLocation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		846B67DB1D74AA5C00399068 /* WTLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTLocation.h; path = WeatherTrends/WTLocation.h; sourceTree = "<group>"; };
+		846B67DC1D74AA5C00399068 /* WTLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTLocation.m; path = WeatherTrends/WTLocation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		846B674B1D74819200399068 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846B676D1D7482B200399068 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846B67451D74819200399068 = {
+			isa = PBXGroup;
+			children = (
+				846B67CD1D74AA5C00399068 /* WTMonth+CoreDataProperties.h */,
+				846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */,
+				846B67CF1D74AA5C00399068 /* WTMonth.h */,
+				846B67D01D74AA5C00399068 /* WTMonth.m */,
+				846B67D11D74AA5C00399068 /* WTYear+CoreDataProperties.h */,
+				846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */,
+				846B67D31D74AA5C00399068 /* WTYear.h */,
+				846B67D41D74AA5C00399068 /* WTYear.m */,
+				846B67D51D74AA5C00399068 /* WTCity+CoreDataProperties.h */,
+				846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */,
+				846B67D71D74AA5C00399068 /* WTCity.h */,
+				846B67D81D74AA5C00399068 /* WTCity.m */,
+				846B67D91D74AA5C00399068 /* WTLocation+CoreDataProperties.h */,
+				846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */,
+				846B67DB1D74AA5C00399068 /* WTLocation.h */,
+				846B67DC1D74AA5C00399068 /* WTLocation.m */,
+				846B67501D74819200399068 /* WeatherTrends */,
+				846B67711D7482B200399068 /* WeatherTrendsTests */,
+				846B674F1D74819200399068 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		846B674F1D74819200399068 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846B674E1D74819200399068 /* WeatherTrends.app */,
+				846B67701D7482B200399068 /* WeatherTrendsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		846B67501D74819200399068 /* WeatherTrends */ = {
+			isa = PBXGroup;
+			children = (
+				846B67681D74819F00399068 /* WeatherParser */,
+				846B67541D74819200399068 /* AppDelegate.h */,
+				846B67551D74819200399068 /* AppDelegate.m */,
+				846B67971D7497EE00399068 /* WTDownloader.h */,
+				846B67981D7497EE00399068 /* WTDownloader.m */,
+				846B67571D74819200399068 /* ViewController.h */,
+				846B67581D74819200399068 /* ViewController.m */,
+				846B679A1D74A32200399068 /* WTCoreDataStack.h */,
+				846B679B1D74A32200399068 /* WTCoreDataStack.m */,
+				846B677A1D7482C600399068 /* weather_data.txt */,
+				846B675A1D74819200399068 /* Main.storyboard */,
+				846B675D1D74819200399068 /* Assets.xcassets */,
+				846B675F1D74819200399068 /* LaunchScreen.storyboard */,
+				846B67621D74819200399068 /* Info.plist */,
+				846B67511D74819200399068 /* Supporting Files */,
+			);
+			path = WeatherTrends;
+			sourceTree = "<group>";
+		};
+		846B67511D74819200399068 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846B67521D74819200399068 /* main.m */,
+				846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		846B67681D74819F00399068 /* WeatherParser */ = {
+			isa = PBXGroup;
+			children = (
+				846B67691D7481DA00399068 /* WTWeatherParser.h */,
+				846B676A1D7481DA00399068 /* WTWeatherParser.m */,
+			);
+			name = WeatherParser;
+			sourceTree = "<group>";
+		};
+		846B67711D7482B200399068 /* WeatherTrendsTests */ = {
+			isa = PBXGroup;
+			children = (
+				846B67721D7482B200399068 /* WeatherTrendsTests.m */,
+				846B67741D7482B200399068 /* Info.plist */,
+			);
+			path = WeatherTrendsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		846B674D1D74819200399068 /* WeatherTrends */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846B67651D74819200399068 /* Build configuration list for PBXNativeTarget "WeatherTrends" */;
+			buildPhases = (
+				846B674A1D74819200399068 /* Sources */,
+				846B674B1D74819200399068 /* Frameworks */,
+				846B674C1D74819200399068 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherTrends;
+			productName = WeatherTrends;
+			productReference = 846B674E1D74819200399068 /* WeatherTrends.app */;
+			productType = "com.apple.product-type.application";
+		};
+		846B676F1D7482B200399068 /* WeatherTrendsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846B67771D7482B200399068 /* Build configuration list for PBXNativeTarget "WeatherTrendsTests" */;
+			buildPhases = (
+				846B676C1D7482B200399068 /* Sources */,
+				846B676D1D7482B200399068 /* Frameworks */,
+				846B676E1D7482B200399068 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846B67761D7482B200399068 /* PBXTargetDependency */,
+			);
+			name = WeatherTrendsTests;
+			productName = WeatherTrendsTests;
+			productReference = 846B67701D7482B200399068 /* WeatherTrendsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		846B67461D74819200399068 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = marydort;
+				TargetAttributes = {
+					846B674D1D74819200399068 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S3M44GGB4N;
+					};
+					846B676F1D7482B200399068 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S3M44GGB4N;
+						TestTargetID = 846B674D1D74819200399068;
+					};
+				};
+			};
+			buildConfigurationList = 846B67491D74819200399068 /* Build configuration list for PBXProject "WeatherTrends" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 846B67451D74819200399068;
+			productRefGroup = 846B674F1D74819200399068 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				846B674D1D74819200399068 /* WeatherTrends */,
+				846B676F1D7482B200399068 /* WeatherTrendsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		846B674C1D74819200399068 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846B67611D74819200399068 /* LaunchScreen.storyboard in Resources */,
+				846B675E1D74819200399068 /* Assets.xcassets in Resources */,
+				846B675C1D74819200399068 /* Main.storyboard in Resources */,
+				846B677B1D7482C600399068 /* weather_data.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846B676E1D7482B200399068 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		846B674A1D74819200399068 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846B67DE1D74AA5C00399068 /* WTMonth.m in Sources */,
+				846B67E31D74AA5C00399068 /* WTLocation+CoreDataProperties.m in Sources */,
+				846B67E41D74AA5C00399068 /* WTLocation.m in Sources */,
+				846B67E11D74AA5C00399068 /* WTCity+CoreDataProperties.m in Sources */,
+				846B67E01D74AA5C00399068 /* WTYear.m in Sources */,
+				846B67991D7497EE00399068 /* WTDownloader.m in Sources */,
+				846B679C1D74A32200399068 /* WTCoreDataStack.m in Sources */,
+				846B676B1D7481DA00399068 /* WTWeatherParser.m in Sources */,
+				846B67DD1D74AA5C00399068 /* WTMonth+CoreDataProperties.m in Sources */,
+				846B677E1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */,
+				846B67591D74819200399068 /* ViewController.m in Sources */,
+				846B67DF1D74AA5C00399068 /* WTYear+CoreDataProperties.m in Sources */,
+				846B67561D74819200399068 /* AppDelegate.m in Sources */,
+				846B67E21D74AA5C00399068 /* WTCity.m in Sources */,
+				846B67531D74819200399068 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846B676C1D7482B200399068 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846B67731D7482B200399068 /* WeatherTrendsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		846B67761D7482B200399068 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846B674D1D74819200399068 /* WeatherTrends */;
+			targetProxy = 846B67751D7482B200399068 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		846B675A1D74819200399068 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846B675B1D74819200399068 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		846B675F1D74819200399068 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846B67601D74819200399068 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		846B67631D74819200399068 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		846B67641D74819200399068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		846B67661D74819200399068 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WeatherTrends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		846B67671D74819200399068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WeatherTrends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		846B67781D7482B200399068 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WeatherTrendsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTrends.app/WeatherTrends";
+			};
+			name = Debug;
+		};
+		846B67791D7482B200399068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WeatherTrendsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTrends.app/WeatherTrends";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		846B67491D74819200399068 /* Build configuration list for PBXProject "WeatherTrends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846B67631D74819200399068 /* Debug */,
+				846B67641D74819200399068 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846B67651D74819200399068 /* Build configuration list for PBXNativeTarget "WeatherTrends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846B67661D74819200399068 /* Debug */,
+				846B67671D74819200399068 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		846B67771D7482B200399068 /* Build configuration list for PBXNativeTarget "WeatherTrendsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846B67781D7482B200399068 /* Debug */,
+				846B67791D7482B200399068 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */,
+			);
+			currentVersion = 846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */;
+			path = WeatherTrendsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 846B67461D74819200399068 /* Project object */;
+}

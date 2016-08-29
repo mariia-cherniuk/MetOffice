@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
+    <entity name="WTCity" representedClassName="WTCity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WTLocation" inverseName="city" inverseEntity="WTLocation" syncable="YES"/>
+        <relationship name="years" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WTYear" inverseName="city" inverseEntity="WTYear" syncable="YES"/>
+    </entity>
+    <entity name="WTLocation" representedClassName="WTLocation" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metresAboveSea" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WTCity" inverseName="location" inverseEntity="WTCity" syncable="YES"/>
+    </entity>
+    <entity name="WTMonth" representedClassName="WTMonth" syncable="YES">
+        <attribute name="afDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxTemp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minTemp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rainAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sunAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="year" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WTYear" inverseName="months" inverseEntity="WTYear" syncable="YES"/>
+    </entity>
+    <entity name="WTYear" representedClassName="WTYear" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WTCity" inverseName="years" inverseEntity="WTCity" syncable="YES"/>
+        <relationship name="months" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WTMonth" inverseName="year" inverseEntity="WTMonth" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WTMonth" positionX="-774" positionY="297" width="128" height="148"/>
+        <element name="WTYear" positionX="-776" positionY="135" width="128" height="88"/>
+        <element name="WTLocation" positionX="-389" positionY="129" width="128" height="103"/>
+        <element name="WTCity" positionX="-585" positionY="27" width="128" height="88"/>
+    </elements>
+</model>
