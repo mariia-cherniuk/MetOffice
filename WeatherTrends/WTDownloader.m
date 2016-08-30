@@ -25,7 +25,7 @@
 //        Check for HTTP error
             NSLog(@"Error: Got stutus code %ld", (long)statusCode);
         } else if (data == nil) {
-//        Check for data == nil error
+//        Check for data error
             NSLog(@"Error: Data is nil");
         }
         

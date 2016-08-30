@@ -21,11 +21,33 @@
     return coreDataStack;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidSaveNotification:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:nil];
+    }
+    return self;
+}
+
 #pragma mark - Private
 
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                    inDomains:NSUserDomainMask] firstObject];
+}
+
+#pragma mark - Notifications
+
+- (void)contextDidSaveNotification:(NSNotification *)notification {
+    if (self.managedObjectContext != notification.object) {
+        [self.managedObjectContext performBlock:^{
+            [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+        }];
+    }
 }
 
 #pragma mark - Core Data Stack
@@ -74,14 +96,22 @@
     return _managedObjectContext;
 }
 
-- (void)saveObjects:(NSDictionary *)results {
+- (NSManagedObjectContext *)writingContext {
+    if (_writingContext) {
+        return _writingContext;
+    }
     
+    _writingContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    _writingContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    
+    return _writingContext;
 }
 
-- (void)saveToStorage {
+
++ (void)saveChangesInContex:(NSManagedObjectContext *)context {
     NSError *error;
     
-    if (![self.managedObjectContext save:&error]) {
+    if (![context save:&error]) {
         NSLog(@"%@", [error description]);
     }
 }

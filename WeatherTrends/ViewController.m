@@ -11,6 +11,8 @@
 #import "WTDownloader.h"
 #import "WTCoreDataStack.h"
 
+static NSString *WTBaseURL = @"http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt";
+
 @interface ViewController ()
 
 @end
@@ -20,13 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [WTDownloader downloadDataByURL:@"http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt" completionBlock:^(NSData *data, NSError *error) {
-        WTWeatherParser *weatherParser = [[WTWeatherParser alloc] initWithManagedObjectContext:[[WTCoreDataStack sharedCoreDataStack] managedObjectContext]];
+    [WTDownloader downloadDataByURL:WTBaseURL completionBlock:^(NSData *data, NSError *error) {
+        WTWeatherParser *weatherParser = [[WTWeatherParser alloc] initWithManagedObjectContext:[[WTCoreDataStack sharedCoreDataStack] writingContext]];
         [weatherParser parseWeatherData:data];
-        
-        [[WTCoreDataStack sharedCoreDataStack] saveToStorage];
-        
-        NSLog(@"");
     }];
     
     

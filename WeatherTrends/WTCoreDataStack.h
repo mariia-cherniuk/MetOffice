@@ -12,13 +12,12 @@
 @interface WTCoreDataStack : NSObject
 
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readwrite, strong) NSManagedObjectContext *writingContext;
 @property (nonatomic, readwrite, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readwrite, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (instancetype)sharedCoreDataStack;
 
-- (void)saveObjects:(NSDictionary *)results;
-- (void)saveToStorage;
-
++ (void)saveChangesInContex:(NSManagedObjectContext *)context;
 
 @end
