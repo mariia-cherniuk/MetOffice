@@ -6,7 +6,7 @@
 //  Copyright © 2016 marydort. All rights reserved.
 //
 
-@import CoreData;
+#import <CoreData/CoreData.h>
 
 @interface NSManagedObjectContext (Tests)
 

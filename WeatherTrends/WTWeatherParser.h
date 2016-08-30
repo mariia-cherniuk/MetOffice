@@ -6,12 +6,12 @@
 //  Copyright © 2016 marydort. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-@import CoreData;
+#import <CoreData/CoreData.h>
+@class WTCity;
 
 @interface WTWeatherParser : NSObject
 
-- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
-- (void)parseWeatherData:(NSData *)weatherData;
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)writingContext;
+- (WTCity *)parseWeatherData:(NSData *)weatherData;
 
 @end

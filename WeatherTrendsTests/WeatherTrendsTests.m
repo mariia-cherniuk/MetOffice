@@ -44,15 +44,8 @@
 }
 
 - (void)testThatItDoesNotParseNilData {
-    WTWeatherParser *parser = [[WTWeatherParser alloc] initWithManagedObjectContext:self.context];
-    [parser parseWeatherData:nil];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
-                                              inManagedObjectContext:self.context];
-    request.entity = entity;
-    WTCity *city = [[self.context executeFetchRequest:request
-                                                error:nil] firstObject];
+    WTWeatherParser *parser = [[WTWeatherParser alloc] initWithManagedObjectContext:_context];
+    WTCity *city = [parser parseWeatherData:nil];
     
     XCTAssertNil(city);
 }
@@ -61,18 +54,12 @@
     //GIVEN
     NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:fileName withExtension:@"txt"];
     NSData *weatherData = [NSData dataWithContentsOfURL:url];
-    WTWeatherParser *parser = [[WTWeatherParser alloc] initWithManagedObjectContext:self.context];
+    WTWeatherParser *parser = [[WTWeatherParser alloc] initWithManagedObjectContext:_context];
     
     //WHEN
-    [parser parseWeatherData:weatherData];
+    WTCity *city = [parser parseWeatherData:weatherData];
     
     //THEN
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
-                                              inManagedObjectContext:self.context];
-    request.entity = entity;
-    WTCity *city = [[self.context executeFetchRequest:request
-                                                error:nil] firstObject];
     [self checkFieldsForCity:city];
 }
 
@@ -111,13 +98,6 @@
     XCTAssertNotNil(month.minTemp);
     XCTAssertNotNil(month.number);
     XCTAssertNotNil(month.sunAmount);
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 @end

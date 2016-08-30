@@ -7,17 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-@import CoreData;
+#import <CoreData/CoreData.h>
 
 @interface WTCoreDataStack : NSObject
 
-@property (nonatomic, readwrite, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readwrite, strong) NSManagedObjectContext *mainContext;
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *writingContext;
 @property (nonatomic, readwrite, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readwrite, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (instancetype)sharedCoreDataStack;
-
 + (void)saveChangesInContex:(NSManagedObjectContext *)context;
 
 @end

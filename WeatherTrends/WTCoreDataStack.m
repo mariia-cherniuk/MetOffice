@@ -21,31 +21,33 @@
     return coreDataStack;
 }
 
-- (instancetype)init
-{
++ (void)saveChangesInContex:(NSManagedObjectContext *)context {
+    NSError *error;
+    
+    if (![context save:&error]) {
+        NSLog(@"%@", [error description]);
+    }
+}
+
+- (instancetype)init {
     self = [super init];
+    
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(contextDidSaveNotification:)
                                                      name:NSManagedObjectContextDidSaveNotification
                                                    object:nil];
     }
+    
     return self;
-}
-
-#pragma mark - Private
-
-- (NSURL *)applicationDocumentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                   inDomains:NSUserDomainMask] firstObject];
 }
 
 #pragma mark - Notifications
 
 - (void)contextDidSaveNotification:(NSNotification *)notification {
-    if (self.managedObjectContext != notification.object) {
-        [self.managedObjectContext performBlock:^{
-            [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    if (self.mainContext != notification.object) {
+        [self.mainContext performBlock:^{
+            [self.mainContext mergeChangesFromContextDidSaveNotification:notification];
         }];
     }
 }
@@ -80,20 +82,20 @@
         NSLog(@"%@", [error description]);
     }
     
-    NSLog(@"%@", storeURL);
+    NSLog(@"storeURL = %@", storeURL);
     
     return _persistentStoreCoordinator;
 }
 
-- (NSManagedObjectContext *)managedObjectContext {
-    if (_managedObjectContext) {
-        return _managedObjectContext;
+- (NSManagedObjectContext *)mainContext {
+    if (_mainContext) {
+        return _mainContext;
     }
     
-    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    _managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    _mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     
-    return _managedObjectContext;
+    return _mainContext;
 }
 
 - (NSManagedObjectContext *)writingContext {
@@ -107,14 +109,11 @@
     return _writingContext;
 }
 
+#pragma mark - Private
 
-+ (void)saveChangesInContex:(NSManagedObjectContext *)context {
-    NSError *error;
-    
-    if (![context save:&error]) {
-        NSLog(@"%@", [error description]);
-    }
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] firstObject];
 }
-
 
 @end

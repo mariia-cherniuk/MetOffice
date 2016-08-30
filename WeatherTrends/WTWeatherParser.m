@@ -17,34 +17,37 @@
 
 @interface WTWeatherParser ()
 
-@property (nonatomic, readwrite, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readwrite, strong) NSManagedObjectContext *writingContext;
 
 @end
 
 @implementation WTWeatherParser
 
-- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)writingContext {
     self = [super init];
     
     if (self) {
-        _managedObjectContext = managedObjectContext;
+        _writingContext = writingContext;
     }
     
     return self;
 }
 
-- (void)parseWeatherData:(NSData *)weatherData {
+- (WTCity *)parseWeatherData:(NSData *)weatherData {
     if (!weatherData) {
-        return;
+        return nil;
     }
-    [_managedObjectContext performBlockAndWait:^{
+    
+    __block WTCity *city;
+    [_writingContext performBlockAndWait:^{
         NSString *weatherDataString = [[NSString alloc] initWithData:weatherData encoding:NSUTF8StringEncoding];
         NSString *cityName = [self getCityNameFromWeatherDataString:weatherDataString];
+        city = [self cityByName:cityName];
         
-        if (![self cityByName:cityName]) {
+        if (!city) {
             NSString *locationSubstring = [self getLocationStringFromWeatherDataString:weatherDataString];
             WTLocation *location = [self parsedLacationFromComponents:locationSubstring];
-            WTCity *city = [self cityWithName:cityName location:location];
+            city = [self cityWithName:cityName location:location];
             
             NSString *yearMonthSubstring = [self getYearMonthStringFromWeatherDataString:weatherDataString];
             NSArray *yearMonthComponents = [yearMonthSubstring componentsSeparatedByString:@"\n"];
@@ -55,6 +58,7 @@
             [self parseYearComponents:yearMonthWorkingArray toCity:city];
         }
     }];
+    return city;
 }
 
 - (NSString *)getCityNameFromWeatherDataString:(NSString *)string {
@@ -105,7 +109,7 @@
     NSArray *locationComponents = [workingLocation componentsSeparatedByString:@","];
     NSArray *latitudeLongitudeComponents = [self seperatedComponentsFromString:locationComponents[0]];
     WTLocation *location = [NSEntityDescription insertNewObjectForEntityForName:@"WTLocation"
-                                                         inManagedObjectContext:_managedObjectContext];
+                                                         inManagedObjectContext:_writingContext];
     
     location.latitude = latitudeLongitudeComponents[1];
     location.longitude = latitudeLongitudeComponents[3];
@@ -116,7 +120,7 @@
 
 - (WTCity *)cityWithName:(NSString *)name location:(WTLocation *)location {
     WTCity *city = [NSEntityDescription insertNewObjectForEntityForName:@"WTCity"
-                                                         inManagedObjectContext:_managedObjectContext];
+                                                         inManagedObjectContext:_writingContext];
     
     city.name = name;
     city.location = location;
@@ -135,7 +139,7 @@
         
         if (![currentYearNumber isEqualToString:yearMonthComponents[0]]) {
             year = [NSEntityDescription insertNewObjectForEntityForName:@"WTYear"
-                                                 inManagedObjectContext:_managedObjectContext];
+                                                 inManagedObjectContext:_writingContext];
             
             year.number = yearMonthComponents[0];
             currentYearNumber = year.number;
@@ -143,30 +147,14 @@
             [yearsSet addObject:year];
         }
         [year addMonthsObject:[self parsedMonthFromComponents:yearMonthComponents]];
-        
-        //save to core data every BATCH_SIZE elements
-        BOOL shouldSave = [self shouldSaveForElementNumber:i batchSize:BATCH_SIZE totalCount:componentsCount];
-        
-        if (shouldSave) {
-            [city addYears:yearsSet];
-            [WTCoreDataStack saveChangesInContex:_managedObjectContext];
-            
-            yearsSet = [[NSMutableSet alloc] init];
-        }
     }
-}
-
-- (BOOL)shouldSaveForElementNumber:(NSInteger )elementNumber
-                         batchSize:(NSInteger)batchSize
-                        totalCount:(NSInteger)totalCount {
-    BOOL isLastBatch = totalCount - elementNumber < batchSize;
-    
-    return  (isLastBatch || (elementNumber % batchSize == 0));
+    [city addYears:yearsSet];
+    [WTCoreDataStack saveChangesInContex:_writingContext];
 }
 
 - (WTMonth *)parsedMonthFromComponents:(NSArray *)components {
     WTMonth *month = [NSEntityDescription insertNewObjectForEntityForName:@"WTMonth"
-                                                   inManagedObjectContext:_managedObjectContext];
+                                                   inManagedObjectContext:_writingContext];
    
     month.number = components[1];
     month.maxTemp = components[2];
@@ -182,13 +170,12 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", cityName];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
-                                              inManagedObjectContext:self.managedObjectContext];
+                                              inManagedObjectContext:_writingContext];
     request.entity = entity;
     request.predicate = predicate;
-    request.sortDescriptors = [[NSArray alloc] init];
     
     NSError *error = nil;
-    WTCity *city = [[self.managedObjectContext executeFetchRequest:request error:&error] firstObject];
+    WTCity *city = [[_writingContext executeFetchRequest:request error:&error] firstObject];
     
     if (error) {
         NSLog(@"%@", [error description]);

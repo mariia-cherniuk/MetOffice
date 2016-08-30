@@ -12,6 +12,13 @@
 
 @implementation WTCity
 
-// Insert code here to add functionality to your managed object subclass
++ (WTCity *)WT_findFirsInContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
+                                              inManagedObjectContext:context];
+    request.entity = entity;
+
+    return [[context executeFetchRequest:request error:nil] firstObject];
+}
 
 @end
