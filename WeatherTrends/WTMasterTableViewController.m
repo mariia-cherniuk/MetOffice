@@ -1,12 +1,12 @@
 //
-//  WTMasterViewController.m
+//  WTStartTableViewController.m
 //  WeatherTrends
 //
-//  Created by Mariia Cherniuk on 29.08.16.
+//  Created by Mariia Cherniuk on 31.08.16.
 //  Copyright © 2016 marydort. All rights reserved.
 //
 
-#import "WTMasterViewController.h"
+#import "WTMasterTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "MAPKit/MAPKit.h"
 #import "WTWeatherParser.h"
@@ -23,12 +23,12 @@
 
 #define LATITUDINAL_METERS 12000
 
-@interface WTMasterViewController () <UITableViewDelegate, MKMapViewDelegate>
+@interface WTMasterTableViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *tableHeaderMapView;
-@property (weak, nonatomic) IBOutlet UITableView *yearsWeatherTabelView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
 @property (nonatomic, readwrite, strong) WTWeatherCityRepository *cityRepository;
 @property (nonatomic, readwrite, strong) WTCity *city;
 @property (nonatomic, readwrite, strong) WTTableViewDataSource *tableViewDataSource;
@@ -37,13 +37,12 @@
 
 @end
 
-@implementation WTMasterViewController
-
-#pragma mark - Life Cycle
+@implementation WTStartTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_yearsWeatherTabelView registerNib:[UINib nibWithNibName:@"WTYearsWeatherTableViewCell" bundle:nil] forCellReuseIdentifier:@"WTYearsWeatherTableViewCell"];
+   
+    [self.tableView registerNib:[UINib nibWithNibName:@"WTYearsWeatherTableViewCell" bundle:nil] forCellReuseIdentifier:@"WTYearsWeatherTableViewCell"];
     [self loadDataIfNeeded];
 }
 
@@ -78,7 +77,7 @@
     return _fetchedResultsController;
 }
 
-#pragma mark - Private
+#pragma mark - Load Data
 
 - (void)loadDataIfNeeded {
     _city = [[WTWeatherCityRepository sharedRepository] currentCity];
@@ -98,10 +97,12 @@
     }];
 }
 
+#pragma mark - Configure Views
+
 - (void)configureViews {
     self.navigationItem.title = _city.name;
     [self configureTableHeader];
-    [self configureYearsWeatherTabelView];
+    [self configureTabelView];
 }
 
 - (void)configureTableHeader {
@@ -117,21 +118,21 @@
     });
 }
 
-- (void)configureYearsWeatherTabelView {
+- (void)configureTabelView {
     _tableViewDataSource = [[WTTableViewDataSource alloc] initWithFetchedResultsController:self.fetchedResultsController cellForRowAtIndexPathBlock:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath, id object) {
         
         WTYearsWeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WTYearsWeatherTableViewCell"];
         WTYear *year = object;
-
+        
         [cell configureWithYear:year];
         
         return cell;
     }];
-    _yearsWeatherTabelView.tableHeaderView = _tableHeaderMapView;
-    _yearsWeatherTabelView.backgroundView = _backgroundImageView;
-    _yearsWeatherTabelView.dataSource = _tableViewDataSource;
-    _yearsWeatherTabelView.delegate = self;
-    [_yearsWeatherTabelView reloadData];
+    self.tableView.tableHeaderView = _tableHeaderMapView;
+    self.tableView.backgroundView = _backgroundImageView;
+    self.tableView.dataSource = _tableViewDataSource;
+    self.tableView.delegate = self;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View Delegate
