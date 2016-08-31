@@ -37,7 +37,7 @@
 
 @end
 
-@implementation WTStartTableViewController
+@implementation WTMasterTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -19,12 +19,17 @@
     self.rainfallImageView.image = [[UIImage imageNamed:@"rainfall"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.sunshineImageView.image = [[UIImage imageNamed:@"sunshine"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.airFrostImageView.image = [[UIImage imageNamed:@"air_frost"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.4];
+    self.selectedBackgroundView = backgroundView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    // Configure the view for the selected state
 }
+
+#pragma mark - Public
 
 - (void)configureWithYear:(WTYear *)year {
 //  KVC magic - http://nshipster.com/kvc-collection-operators/
