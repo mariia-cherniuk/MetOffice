@@ -1,5 +1,5 @@
 //
-//  WTStartViewController.h
+//  WTMasterViewController.h
 //  WeatherTrends
 //
 //  Created by Mariia Cherniuk on 29.08.16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WTStartViewController : UIViewController
+@interface WTMasterViewController : UIViewController
 
 @end
 

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		846B67531D74819200399068 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67521D74819200399068 /* main.m */; };
 		846B67561D74819200399068 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67551D74819200399068 /* AppDelegate.m */; };
-		846B67591D74819200399068 /* WTStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67581D74819200399068 /* WTStartViewController.m */; };
+		846B67591D74819200399068 /* WTMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67581D74819200399068 /* WTMasterViewController.m */; };
 		846B675C1D74819200399068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675A1D74819200399068 /* Main.storyboard */; };
 		846B675E1D74819200399068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B675D1D74819200399068 /* Assets.xcassets */; };
 		846B67611D74819200399068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675F1D74819200399068 /* LaunchScreen.storyboard */; };
@@ -64,8 +64,8 @@
 		846B67521D74819200399068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		846B67541D74819200399068 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		846B67551D74819200399068 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		846B67571D74819200399068 /* WTStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTStartViewController.h; sourceTree = "<group>"; };
-		846B67581D74819200399068 /* WTStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTStartViewController.m; sourceTree = "<group>"; };
+		846B67571D74819200399068 /* WTMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMasterViewController.h; sourceTree = "<group>"; };
+		846B67581D74819200399068 /* WTMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMasterViewController.m; sourceTree = "<group>"; };
 		846B675B1D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		846B675D1D74819200399068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846B67601D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 				846B67551D74819200399068 /* AppDelegate.m */,
 				846B67971D7497EE00399068 /* WTDownloader.h */,
 				846B67981D7497EE00399068 /* WTDownloader.m */,
-				846B67571D74819200399068 /* WTStartViewController.h */,
-				846B67581D74819200399068 /* WTStartViewController.m */,
+				846B67571D74819200399068 /* WTMasterViewController.h */,
+				846B67581D74819200399068 /* WTMasterViewController.m */,
 				846B680D1D76158E00399068 /* WTDetailViewController.h */,
 				846B680E1D76158F00399068 /* WTDetailViewController.m */,
 				846B67FC1D75C67000399068 /* WTCityAnnotation.h */,
@@ -350,7 +350,7 @@
 				846B676B1D7481DA00399068 /* WTWeatherParser.m in Sources */,
 				846B67DD1D74AA5C00399068 /* WTMonth+CoreDataProperties.m in Sources */,
 				846B677E1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */,
-				846B67591D74819200399068 /* WTStartViewController.m in Sources */,
+				846B67591D74819200399068 /* WTMasterViewController.m in Sources */,
 				846B68011D75CCCE00399068 /* WTWeatherCityRepository.m in Sources */,
 				846B67DF1D74AA5C00399068 /* WTYear+CoreDataProperties.m in Sources */,
 				846B67FE1D75C67000399068 /* WTCityAnnotation.m in Sources */,

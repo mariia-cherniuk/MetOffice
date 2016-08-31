@@ -1,12 +1,12 @@
 //
-//  WTStartViewController.m
+//  WTMasterViewController.m
 //  WeatherTrends
 //
 //  Created by Mariia Cherniuk on 29.08.16.
 //  Copyright © 2016 marydort. All rights reserved.
 //
 
-#import "WTStartViewController.h"
+#import "WTMasterViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "MAPKit/MAPKit.h"
 #import "WTWeatherParser.h"
@@ -23,7 +23,7 @@
 
 #define LATITUDINAL_METERS 12000
 
-@interface WTStartViewController () <UITableViewDelegate, MKMapViewDelegate>
+@interface WTMasterViewController () <UITableViewDelegate, MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *tableHeaderMapView;
 @property (weak, nonatomic) IBOutlet UITableView *yearsWeatherTabelView;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation WTStartViewController
+@implementation WTMasterViewController
 
 #pragma mark - Life Cycle
 
