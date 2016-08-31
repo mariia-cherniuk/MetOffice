@@ -1,582 +1,1859 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		846B67531D74819200399068 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67521D74819200399068 /* main.m */; };
-		846B67561D74819200399068 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67551D74819200399068 /* AppDelegate.m */; };
-		846B675C1D74819200399068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675A1D74819200399068 /* Main.storyboard */; };
-		846B675E1D74819200399068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B675D1D74819200399068 /* Assets.xcassets */; };
-		846B67611D74819200399068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B675F1D74819200399068 /* LaunchScreen.storyboard */; };
-		846B676B1D7481DA00399068 /* WTWeatherParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B676A1D7481DA00399068 /* WTWeatherParser.m */; };
-		846B67731D7482B200399068 /* WeatherTrendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67721D7482B200399068 /* WeatherTrendsTests.m */; };
-		846B677E1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */; };
-		846B67991D7497EE00399068 /* WTDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67981D7497EE00399068 /* WTDownloader.m */; };
-		846B679C1D74A32200399068 /* WTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B679B1D74A32200399068 /* WTCoreDataStack.m */; };
-		846B67DD1D74AA5C00399068 /* WTMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */; };
-		846B67DE1D74AA5C00399068 /* WTMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D01D74AA5C00399068 /* WTMonth.m */; };
-		846B67DF1D74AA5C00399068 /* WTYear+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */; };
-		846B67E01D74AA5C00399068 /* WTYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D41D74AA5C00399068 /* WTYear.m */; };
-		846B67E11D74AA5C00399068 /* WTCity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */; };
-		846B67E21D74AA5C00399068 /* WTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D81D74AA5C00399068 /* WTCity.m */; };
-		846B67E31D74AA5C00399068 /* WTLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */; };
-		846B67E41D74AA5C00399068 /* WTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DC1D74AA5C00399068 /* WTLocation.m */; };
-		846B67E71D75A04800399068 /* NSManagedObjectContext+Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67E61D75A04800399068 /* NSManagedObjectContext+Tests.m */; };
-		846B67E81D75A3CA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */; };
-		846B67E91D75A46400399068 /* WTWeatherParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B676A1D7481DA00399068 /* WTWeatherParser.m */; };
-		846B67EA1D75A50A00399068 /* WTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B679B1D74A32200399068 /* WTCoreDataStack.m */; };
-		846B67EB1D75A65F00399068 /* WTMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */; };
-		846B67EC1D75A65F00399068 /* WTMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D01D74AA5C00399068 /* WTMonth.m */; };
-		846B67ED1D75A65F00399068 /* WTYear+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */; };
-		846B67EE1D75A65F00399068 /* WTYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D41D74AA5C00399068 /* WTYear.m */; };
-		846B67EF1D75A65F00399068 /* WTCity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */; };
-		846B67F01D75A65F00399068 /* WTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67D81D74AA5C00399068 /* WTCity.m */; };
-		846B67F11D75A65F00399068 /* WTLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */; };
-		846B67F21D75A65F00399068 /* WTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67DC1D74AA5C00399068 /* WTLocation.m */; };
-		846B67F31D75A7BB00399068 /* weather_data1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846B677A1D7482C600399068 /* weather_data1.txt */; };
-		846B67F51D75B2BE00399068 /* weather_data2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846B67F41D75B2BE00399068 /* weather_data2.txt */; };
-		846B67FE1D75C67000399068 /* WTCityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B67FD1D75C67000399068 /* WTCityAnnotation.m */; };
-		846B68011D75CCCE00399068 /* WTWeatherCityRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B68001D75CCCE00399068 /* WTWeatherCityRepository.m */; };
-		846B68041D75DE4900399068 /* WTTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B68031D75DE4900399068 /* WTTableViewDataSource.m */; };
-		846B68081D75F94800399068 /* WTYearsWeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B68061D75F94800399068 /* WTYearsWeatherTableViewCell.m */; };
-		846B68091D75F94800399068 /* WTYearsWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B68071D75F94800399068 /* WTYearsWeatherTableViewCell.xib */; };
-		846B680C1D76017F00399068 /* MADFetchedResultsTableViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B680B1D76017F00399068 /* MADFetchedResultsTableViewAdapter.m */; };
-		846B680F1D76158F00399068 /* WTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B680E1D76158F00399068 /* WTDetailViewController.m */; };
-		846B68121D76E2C800399068 /* WTMasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B68111D76E2C800399068 /* WTMasterTableViewController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		846B67751D7482B200399068 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 846B67461D74819200399068 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 846B674D1D74819200399068;
-			remoteInfo = WeatherTrends;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		846B674E1D74819200399068 /* WeatherTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		846B67521D74819200399068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		846B67541D74819200399068 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		846B67551D74819200399068 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		846B675B1D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		846B675D1D74819200399068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		846B67601D74819200399068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		846B67621D74819200399068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846B67691D7481DA00399068 /* WTWeatherParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWeatherParser.h; sourceTree = "<group>"; };
-		846B676A1D7481DA00399068 /* WTWeatherParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWeatherParser.m; sourceTree = "<group>"; };
-		846B67701D7482B200399068 /* WeatherTrendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTrendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		846B67721D7482B200399068 /* WeatherTrendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherTrendsTests.m; sourceTree = "<group>"; };
-		846B67741D7482B200399068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846B677A1D7482C600399068 /* weather_data1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = weather_data1.txt; path = ../WeatherTrends/weather_data1.txt; sourceTree = "<group>"; };
-		846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherTrendsModel.xcdatamodel; sourceTree = "<group>"; };
-		846B67971D7497EE00399068 /* WTDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDownloader.h; sourceTree = "<group>"; };
-		846B67981D7497EE00399068 /* WTDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDownloader.m; sourceTree = "<group>"; };
-		846B679A1D74A32200399068 /* WTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCoreDataStack.h; sourceTree = "<group>"; };
-		846B679B1D74A32200399068 /* WTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCoreDataStack.m; sourceTree = "<group>"; };
-		846B67CD1D74AA5C00399068 /* WTMonth+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMonth+CoreDataProperties.h"; path = "WeatherTrends/WTMonth+CoreDataProperties.h"; sourceTree = "<group>"; };
-		846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMonth+CoreDataProperties.m"; path = "WeatherTrends/WTMonth+CoreDataProperties.m"; sourceTree = "<group>"; };
-		846B67CF1D74AA5C00399068 /* WTMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMonth.h; path = WeatherTrends/WTMonth.h; sourceTree = "<group>"; };
-		846B67D01D74AA5C00399068 /* WTMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMonth.m; path = WeatherTrends/WTMonth.m; sourceTree = "<group>"; };
-		846B67D11D74AA5C00399068 /* WTYear+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTYear+CoreDataProperties.h"; path = "WeatherTrends/WTYear+CoreDataProperties.h"; sourceTree = "<group>"; };
-		846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTYear+CoreDataProperties.m"; path = "WeatherTrends/WTYear+CoreDataProperties.m"; sourceTree = "<group>"; };
-		846B67D31D74AA5C00399068 /* WTYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTYear.h; path = WeatherTrends/WTYear.h; sourceTree = "<group>"; };
-		846B67D41D74AA5C00399068 /* WTYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTYear.m; path = WeatherTrends/WTYear.m; sourceTree = "<group>"; };
-		846B67D51D74AA5C00399068 /* WTCity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTCity+CoreDataProperties.h"; path = "WeatherTrends/WTCity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTCity+CoreDataProperties.m"; path = "WeatherTrends/WTCity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		846B67D71D74AA5C00399068 /* WTCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTCity.h; path = WeatherTrends/WTCity.h; sourceTree = "<group>"; };
-		846B67D81D74AA5C00399068 /* WTCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTCity.m; path = WeatherTrends/WTCity.m; sourceTree = "<group>"; };
-		846B67D91D74AA5C00399068 /* WTLocation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTLocation+CoreDataProperties.h"; path = "WeatherTrends/WTLocation+CoreDataProperties.h"; sourceTree = "<group>"; };
-		846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTLocation+CoreDataProperties.m"; path = "WeatherTrends/WTLocation+CoreDataProperties.m"; sourceTree = "<group>"; };
-		846B67DB1D74AA5C00399068 /* WTLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTLocation.h; path = WeatherTrends/WTLocation.h; sourceTree = "<group>"; };
-		846B67DC1D74AA5C00399068 /* WTLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTLocation.m; path = WeatherTrends/WTLocation.m; sourceTree = "<group>"; };
-		846B67E51D75A04800399068 /* NSManagedObjectContext+Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Tests.h"; sourceTree = "<group>"; };
-		846B67E61D75A04800399068 /* NSManagedObjectContext+Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Tests.m"; sourceTree = "<group>"; };
-		846B67F41D75B2BE00399068 /* weather_data2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weather_data2.txt; sourceTree = "<group>"; };
-		846B67FC1D75C67000399068 /* WTCityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCityAnnotation.h; sourceTree = "<group>"; };
-		846B67FD1D75C67000399068 /* WTCityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCityAnnotation.m; sourceTree = "<group>"; };
-		846B67FF1D75CCCE00399068 /* WTWeatherCityRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWeatherCityRepository.h; sourceTree = "<group>"; };
-		846B68001D75CCCE00399068 /* WTWeatherCityRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWeatherCityRepository.m; sourceTree = "<group>"; };
-		846B68021D75DE4900399068 /* WTTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTableViewDataSource.h; sourceTree = "<group>"; };
-		846B68031D75DE4900399068 /* WTTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTableViewDataSource.m; sourceTree = "<group>"; };
-		846B68051D75F94800399068 /* WTYearsWeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTYearsWeatherTableViewCell.h; sourceTree = "<group>"; };
-		846B68061D75F94800399068 /* WTYearsWeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTYearsWeatherTableViewCell.m; sourceTree = "<group>"; };
-		846B68071D75F94800399068 /* WTYearsWeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTYearsWeatherTableViewCell.xib; sourceTree = "<group>"; };
-		846B680A1D76017F00399068 /* MADFetchedResultsTableViewAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADFetchedResultsTableViewAdapter.h; sourceTree = "<group>"; };
-		846B680B1D76017F00399068 /* MADFetchedResultsTableViewAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MADFetchedResultsTableViewAdapter.m; sourceTree = "<group>"; };
-		846B680D1D76158E00399068 /* WTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDetailViewController.h; sourceTree = "<group>"; };
-		846B680E1D76158F00399068 /* WTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDetailViewController.m; sourceTree = "<group>"; };
-		846B68101D76E2C800399068 /* WTMasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMasterTableViewController.h; sourceTree = "<group>"; };
-		846B68111D76E2C800399068 /* WTMasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMasterTableViewController.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		846B674B1D74819200399068 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		846B676D1D7482B200399068 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		846B67451D74819200399068 = {
-			isa = PBXGroup;
-			children = (
-				846B67CD1D74AA5C00399068 /* WTMonth+CoreDataProperties.h */,
-				846B67CE1D74AA5C00399068 /* WTMonth+CoreDataProperties.m */,
-				846B67CF1D74AA5C00399068 /* WTMonth.h */,
-				846B67D01D74AA5C00399068 /* WTMonth.m */,
-				846B67D11D74AA5C00399068 /* WTYear+CoreDataProperties.h */,
-				846B67D21D74AA5C00399068 /* WTYear+CoreDataProperties.m */,
-				846B67D31D74AA5C00399068 /* WTYear.h */,
-				846B67D41D74AA5C00399068 /* WTYear.m */,
-				846B67D51D74AA5C00399068 /* WTCity+CoreDataProperties.h */,
-				846B67D61D74AA5C00399068 /* WTCity+CoreDataProperties.m */,
-				846B67D71D74AA5C00399068 /* WTCity.h */,
-				846B67D81D74AA5C00399068 /* WTCity.m */,
-				846B67D91D74AA5C00399068 /* WTLocation+CoreDataProperties.h */,
-				846B67DA1D74AA5C00399068 /* WTLocation+CoreDataProperties.m */,
-				846B67DB1D74AA5C00399068 /* WTLocation.h */,
-				846B67DC1D74AA5C00399068 /* WTLocation.m */,
-				846B67501D74819200399068 /* WeatherTrends */,
-				846B67711D7482B200399068 /* WeatherTrendsTests */,
-				846B674F1D74819200399068 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		846B674F1D74819200399068 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				846B674E1D74819200399068 /* WeatherTrends.app */,
-				846B67701D7482B200399068 /* WeatherTrendsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		846B67501D74819200399068 /* WeatherTrends */ = {
-			isa = PBXGroup;
-			children = (
-				846B67681D74819F00399068 /* WeatherParser */,
-				846B67541D74819200399068 /* AppDelegate.h */,
-				846B67551D74819200399068 /* AppDelegate.m */,
-				846B67971D7497EE00399068 /* WTDownloader.h */,
-				846B67981D7497EE00399068 /* WTDownloader.m */,
-				846B68101D76E2C800399068 /* WTMasterTableViewController.h */,
-				846B68111D76E2C800399068 /* WTMasterTableViewController.m */,
-				846B680D1D76158E00399068 /* WTDetailViewController.h */,
-				846B680E1D76158F00399068 /* WTDetailViewController.m */,
-				846B67FC1D75C67000399068 /* WTCityAnnotation.h */,
-				846B67FD1D75C67000399068 /* WTCityAnnotation.m */,
-				846B68021D75DE4900399068 /* WTTableViewDataSource.h */,
-				846B68031D75DE4900399068 /* WTTableViewDataSource.m */,
-				846B680A1D76017F00399068 /* MADFetchedResultsTableViewAdapter.h */,
-				846B680B1D76017F00399068 /* MADFetchedResultsTableViewAdapter.m */,
-				846B679A1D74A32200399068 /* WTCoreDataStack.h */,
-				846B679B1D74A32200399068 /* WTCoreDataStack.m */,
-				846B67FF1D75CCCE00399068 /* WTWeatherCityRepository.h */,
-				846B68001D75CCCE00399068 /* WTWeatherCityRepository.m */,
-				846B68051D75F94800399068 /* WTYearsWeatherTableViewCell.h */,
-				846B68061D75F94800399068 /* WTYearsWeatherTableViewCell.m */,
-				846B68071D75F94800399068 /* WTYearsWeatherTableViewCell.xib */,
-				846B675A1D74819200399068 /* Main.storyboard */,
-				846B675D1D74819200399068 /* Assets.xcassets */,
-				846B675F1D74819200399068 /* LaunchScreen.storyboard */,
-				846B67621D74819200399068 /* Info.plist */,
-				846B67511D74819200399068 /* Supporting Files */,
-			);
-			path = WeatherTrends;
-			sourceTree = "<group>";
-		};
-		846B67511D74819200399068 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				846B67521D74819200399068 /* main.m */,
-				846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		846B67681D74819F00399068 /* WeatherParser */ = {
-			isa = PBXGroup;
-			children = (
-				846B67691D7481DA00399068 /* WTWeatherParser.h */,
-				846B676A1D7481DA00399068 /* WTWeatherParser.m */,
-			);
-			name = WeatherParser;
-			sourceTree = "<group>";
-		};
-		846B67711D7482B200399068 /* WeatherTrendsTests */ = {
-			isa = PBXGroup;
-			children = (
-				846B677A1D7482C600399068 /* weather_data1.txt */,
-				846B67F41D75B2BE00399068 /* weather_data2.txt */,
-				846B67721D7482B200399068 /* WeatherTrendsTests.m */,
-				846B67741D7482B200399068 /* Info.plist */,
-				846B67E51D75A04800399068 /* NSManagedObjectContext+Tests.h */,
-				846B67E61D75A04800399068 /* NSManagedObjectContext+Tests.m */,
-			);
-			path = WeatherTrendsTests;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		846B674D1D74819200399068 /* WeatherTrends */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 846B67651D74819200399068 /* Build configuration list for PBXNativeTarget "WeatherTrends" */;
-			buildPhases = (
-				846B674A1D74819200399068 /* Sources */,
-				846B674B1D74819200399068 /* Frameworks */,
-				846B674C1D74819200399068 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WeatherTrends;
-			productName = WeatherTrends;
-			productReference = 846B674E1D74819200399068 /* WeatherTrends.app */;
-			productType = "com.apple.product-type.application";
-		};
-		846B676F1D7482B200399068 /* WeatherTrendsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 846B67771D7482B200399068 /* Build configuration list for PBXNativeTarget "WeatherTrendsTests" */;
-			buildPhases = (
-				846B676C1D7482B200399068 /* Sources */,
-				846B676D1D7482B200399068 /* Frameworks */,
-				846B676E1D7482B200399068 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				846B67761D7482B200399068 /* PBXTargetDependency */,
-			);
-			name = WeatherTrendsTests;
-			productName = WeatherTrendsTests;
-			productReference = 846B67701D7482B200399068 /* WeatherTrendsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		846B67461D74819200399068 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = WT;
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = marydort;
-				TargetAttributes = {
-					846B674D1D74819200399068 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = S3M44GGB4N;
-					};
-					846B676F1D7482B200399068 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = S3M44GGB4N;
-					};
-				};
-			};
-			buildConfigurationList = 846B67491D74819200399068 /* Build configuration list for PBXProject "WeatherTrends" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 846B67451D74819200399068;
-			productRefGroup = 846B674F1D74819200399068 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				846B674D1D74819200399068 /* WeatherTrends */,
-				846B676F1D7482B200399068 /* WeatherTrendsTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		846B674C1D74819200399068 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				846B67611D74819200399068 /* LaunchScreen.storyboard in Resources */,
-				846B675E1D74819200399068 /* Assets.xcassets in Resources */,
-				846B68091D75F94800399068 /* WTYearsWeatherTableViewCell.xib in Resources */,
-				846B675C1D74819200399068 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		846B676E1D7482B200399068 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				846B67F51D75B2BE00399068 /* weather_data2.txt in Resources */,
-				846B67F31D75A7BB00399068 /* weather_data1.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		846B674A1D74819200399068 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				846B67DE1D74AA5C00399068 /* WTMonth.m in Sources */,
-				846B680C1D76017F00399068 /* MADFetchedResultsTableViewAdapter.m in Sources */,
-				846B68081D75F94800399068 /* WTYearsWeatherTableViewCell.m in Sources */,
-				846B67E31D74AA5C00399068 /* WTLocation+CoreDataProperties.m in Sources */,
-				846B67E41D74AA5C00399068 /* WTLocation.m in Sources */,
-				846B67E11D74AA5C00399068 /* WTCity+CoreDataProperties.m in Sources */,
-				846B680F1D76158F00399068 /* WTDetailViewController.m in Sources */,
-				846B67E01D74AA5C00399068 /* WTYear.m in Sources */,
-				846B67991D7497EE00399068 /* WTDownloader.m in Sources */,
-				846B679C1D74A32200399068 /* WTCoreDataStack.m in Sources */,
-				846B676B1D7481DA00399068 /* WTWeatherParser.m in Sources */,
-				846B67DD1D74AA5C00399068 /* WTMonth+CoreDataProperties.m in Sources */,
-				846B677E1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */,
-				846B68011D75CCCE00399068 /* WTWeatherCityRepository.m in Sources */,
-				846B67DF1D74AA5C00399068 /* WTYear+CoreDataProperties.m in Sources */,
-				846B67FE1D75C67000399068 /* WTCityAnnotation.m in Sources */,
-				846B68121D76E2C800399068 /* WTMasterTableViewController.m in Sources */,
-				846B67561D74819200399068 /* AppDelegate.m in Sources */,
-				846B67E21D74AA5C00399068 /* WTCity.m in Sources */,
-				846B67531D74819200399068 /* main.m in Sources */,
-				846B68041D75DE4900399068 /* WTTableViewDataSource.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		846B676C1D7482B200399068 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				846B67EE1D75A65F00399068 /* WTYear.m in Sources */,
-				846B67F11D75A65F00399068 /* WTLocation+CoreDataProperties.m in Sources */,
-				846B67E91D75A46400399068 /* WTWeatherParser.m in Sources */,
-				846B67E81D75A3CA00399068 /* WeatherTrendsModel.xcdatamodeld in Sources */,
-				846B67EC1D75A65F00399068 /* WTMonth.m in Sources */,
-				846B67F21D75A65F00399068 /* WTLocation.m in Sources */,
-				846B67EA1D75A50A00399068 /* WTCoreDataStack.m in Sources */,
-				846B67EF1D75A65F00399068 /* WTCity+CoreDataProperties.m in Sources */,
-				846B67F01D75A65F00399068 /* WTCity.m in Sources */,
-				846B67EB1D75A65F00399068 /* WTMonth+CoreDataProperties.m in Sources */,
-				846B67ED1D75A65F00399068 /* WTYear+CoreDataProperties.m in Sources */,
-				846B67731D7482B200399068 /* WeatherTrendsTests.m in Sources */,
-				846B67E71D75A04800399068 /* NSManagedObjectContext+Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		846B67761D7482B200399068 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 846B674D1D74819200399068 /* WeatherTrends */;
-			targetProxy = 846B67751D7482B200399068 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		846B675A1D74819200399068 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846B675B1D74819200399068 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		846B675F1D74819200399068 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846B67601D74819200399068 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		846B67631D74819200399068 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		846B67641D74819200399068 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		846B67661D74819200399068 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = WeatherTrends/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrends;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		846B67671D74819200399068 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = WeatherTrends/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrends;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		846B67781D7482B200399068 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WeatherTrendsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrendsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		846B67791D7482B200399068 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WeatherTrendsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marydort.WeatherTrendsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		846B67491D74819200399068 /* Build configuration list for PBXProject "WeatherTrends" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				846B67631D74819200399068 /* Debug */,
-				846B67641D74819200399068 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		846B67651D74819200399068 /* Build configuration list for PBXNativeTarget "WeatherTrends" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				846B67661D74819200399068 /* Debug */,
-				846B67671D74819200399068 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		846B67771D7482B200399068 /* Build configuration list for PBXNativeTarget "WeatherTrendsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				846B67781D7482B200399068 /* Debug */,
-				846B67791D7482B200399068 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		846B677C1D7491DA00399068 /* WeatherTrendsModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */,
-			);
-			currentVersion = 846B677D1D7491DA00399068 /* WeatherTrendsModel.xcdatamodel */;
-			path = WeatherTrendsModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 846B67461D74819200399068 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>3C8FD54F7F53D2B4576AF195</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-WeatherTrends/Pods-WeatherTrends-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>5F9DDBD127A5B5130393F7D1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-WeatherTrends.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-WeatherTrends/Pods-WeatherTrends.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F1B9E440D295C751C1624ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-WeatherTrends.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-WeatherTrends/Pods-WeatherTrends.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67451D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B67CD1D74AA5C00399068</string>
+				<string>846B67CE1D74AA5C00399068</string>
+				<string>846B67CF1D74AA5C00399068</string>
+				<string>846B67D01D74AA5C00399068</string>
+				<string>846B67D11D74AA5C00399068</string>
+				<string>846B67D21D74AA5C00399068</string>
+				<string>846B67D31D74AA5C00399068</string>
+				<string>846B67D41D74AA5C00399068</string>
+				<string>846B67D51D74AA5C00399068</string>
+				<string>846B67D61D74AA5C00399068</string>
+				<string>846B67D71D74AA5C00399068</string>
+				<string>846B67D81D74AA5C00399068</string>
+				<string>846B67D91D74AA5C00399068</string>
+				<string>846B67DA1D74AA5C00399068</string>
+				<string>846B67DB1D74AA5C00399068</string>
+				<string>846B67DC1D74AA5C00399068</string>
+				<string>846B67501D74819200399068</string>
+				<string>846B67711D7482B200399068</string>
+				<string>846B674F1D74819200399068</string>
+				<string>C6D45AD4315567E9084B4B11</string>
+				<string>8BA47250BCF1C6ABD2CB5D4C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67461D74819200399068</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>WT</string>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>marydort</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>846B674D1D74819200399068</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>DevelopmentTeam</key>
+						<string>S3M44GGB4N</string>
+					</dict>
+					<key>846B676F1D7482B200399068</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>DevelopmentTeam</key>
+						<string>S3M44GGB4N</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>846B67491D74819200399068</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>846B67451D74819200399068</string>
+			<key>productRefGroup</key>
+			<string>846B674F1D74819200399068</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>846B674D1D74819200399068</string>
+				<string>846B676F1D7482B200399068</string>
+			</array>
+		</dict>
+		<key>846B67491D74819200399068</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>846B67631D74819200399068</string>
+				<string>846B67641D74819200399068</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>846B674A1D74819200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>846B67DE1D74AA5C00399068</string>
+				<string>846B680C1D76017F00399068</string>
+				<string>846B68081D75F94800399068</string>
+				<string>846B67E31D74AA5C00399068</string>
+				<string>846B67E41D74AA5C00399068</string>
+				<string>846B67E11D74AA5C00399068</string>
+				<string>846B680F1D76158F00399068</string>
+				<string>846B67E01D74AA5C00399068</string>
+				<string>846B67991D7497EE00399068</string>
+				<string>846B679C1D74A32200399068</string>
+				<string>846B676B1D7481DA00399068</string>
+				<string>846B67DD1D74AA5C00399068</string>
+				<string>846B677E1D7491DA00399068</string>
+				<string>846B68011D75CCCE00399068</string>
+				<string>846B67DF1D74AA5C00399068</string>
+				<string>846B67FE1D75C67000399068</string>
+				<string>846B68121D76E2C800399068</string>
+				<string>846B67561D74819200399068</string>
+				<string>846B67E21D74AA5C00399068</string>
+				<string>846B67531D74819200399068</string>
+				<string>846B68041D75DE4900399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B674B1D74819200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D0EEB4D686A9517DE7113A76</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B674C1D74819200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>846B67611D74819200399068</string>
+				<string>846B675E1D74819200399068</string>
+				<string>846B68091D75F94800399068</string>
+				<string>846B675C1D74819200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B674D1D74819200399068</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>846B67651D74819200399068</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CB980D14094017FD47E21C3B</string>
+				<string>846B674A1D74819200399068</string>
+				<string>846B674B1D74819200399068</string>
+				<string>846B674C1D74819200399068</string>
+				<string>B99C0D4EFFFDEEBFC1A6267F</string>
+				<string>3C8FD54F7F53D2B4576AF195</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>WeatherTrends</string>
+			<key>productName</key>
+			<string>WeatherTrends</string>
+			<key>productReference</key>
+			<string>846B674E1D74819200399068</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>846B674E1D74819200399068</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>WeatherTrends.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>846B674F1D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B674E1D74819200399068</string>
+				<string>846B67701D7482B200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67501D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B67681D74819F00399068</string>
+				<string>846B67541D74819200399068</string>
+				<string>846B67551D74819200399068</string>
+				<string>846B67971D7497EE00399068</string>
+				<string>846B67981D7497EE00399068</string>
+				<string>846B68101D76E2C800399068</string>
+				<string>846B68111D76E2C800399068</string>
+				<string>846B680D1D76158E00399068</string>
+				<string>846B680E1D76158F00399068</string>
+				<string>846B67FC1D75C67000399068</string>
+				<string>846B67FD1D75C67000399068</string>
+				<string>846B68021D75DE4900399068</string>
+				<string>846B68031D75DE4900399068</string>
+				<string>846B680A1D76017F00399068</string>
+				<string>846B680B1D76017F00399068</string>
+				<string>846B679A1D74A32200399068</string>
+				<string>846B679B1D74A32200399068</string>
+				<string>846B67FF1D75CCCE00399068</string>
+				<string>846B68001D75CCCE00399068</string>
+				<string>846B68051D75F94800399068</string>
+				<string>846B68061D75F94800399068</string>
+				<string>846B68071D75F94800399068</string>
+				<string>846B675A1D74819200399068</string>
+				<string>846B675D1D74819200399068</string>
+				<string>846B675F1D74819200399068</string>
+				<string>846B67621D74819200399068</string>
+				<string>846B67511D74819200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>WeatherTrends</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67511D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B67521D74819200399068</string>
+				<string>846B677C1D7491DA00399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67521D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67531D74819200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67521D74819200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67541D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67551D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67561D74819200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67551D74819200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B675A1D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B675B1D74819200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B675B1D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B675C1D74819200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B675A1D74819200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B675D1D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B675E1D74819200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B675D1D74819200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B675F1D74819200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B67601D74819200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67601D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67611D74819200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B675F1D74819200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67621D74819200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67631D74819200399068</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>846B67641D74819200399068</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>846B67651D74819200399068</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>846B67661D74819200399068</string>
+				<string>846B67671D74819200399068</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>846B67661D74819200399068</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7F1B9E440D295C751C1624ED</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>WeatherTrends/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.marydort.WeatherTrends</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>846B67671D74819200399068</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>5F9DDBD127A5B5130393F7D1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>WeatherTrends/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.marydort.WeatherTrends</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>846B67681D74819F00399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B67691D7481DA00399068</string>
+				<string>846B676A1D7481DA00399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>WeatherParser</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67691D7481DA00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTWeatherParser.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B676A1D7481DA00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTWeatherParser.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B676B1D7481DA00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B676A1D7481DA00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B676C1D7482B200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>846B67EE1D75A65F00399068</string>
+				<string>846B67F11D75A65F00399068</string>
+				<string>846B67E91D75A46400399068</string>
+				<string>846B67E81D75A3CA00399068</string>
+				<string>846B67EC1D75A65F00399068</string>
+				<string>846B67F21D75A65F00399068</string>
+				<string>846B67EA1D75A50A00399068</string>
+				<string>846B67EF1D75A65F00399068</string>
+				<string>846B67F01D75A65F00399068</string>
+				<string>846B67EB1D75A65F00399068</string>
+				<string>846B67ED1D75A65F00399068</string>
+				<string>846B67731D7482B200399068</string>
+				<string>846B67E71D75A04800399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B676D1D7482B200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B676E1D7482B200399068</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>846B67F51D75B2BE00399068</string>
+				<string>846B67F31D75A7BB00399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>846B676F1D7482B200399068</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>846B67771D7482B200399068</string>
+			<key>buildPhases</key>
+			<array>
+				<string>846B676C1D7482B200399068</string>
+				<string>846B676D1D7482B200399068</string>
+				<string>846B676E1D7482B200399068</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>846B67761D7482B200399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>WeatherTrendsTests</string>
+			<key>productName</key>
+			<string>WeatherTrendsTests</string>
+			<key>productReference</key>
+			<string>846B67701D7482B200399068</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>846B67701D7482B200399068</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>WeatherTrendsTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>846B67711D7482B200399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B677A1D7482C600399068</string>
+				<string>846B67F41D75B2BE00399068</string>
+				<string>846B67721D7482B200399068</string>
+				<string>846B67741D7482B200399068</string>
+				<string>846B67E51D75A04800399068</string>
+				<string>846B67E61D75A04800399068</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>WeatherTrendsTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67721D7482B200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WeatherTrendsTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67731D7482B200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67721D7482B200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67741D7482B200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67751D7482B200399068</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>846B67461D74819200399068</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>846B674D1D74819200399068</string>
+			<key>remoteInfo</key>
+			<string>WeatherTrends</string>
+		</dict>
+		<key>846B67761D7482B200399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>846B674D1D74819200399068</string>
+			<key>targetProxy</key>
+			<string>846B67751D7482B200399068</string>
+		</dict>
+		<key>846B67771D7482B200399068</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>846B67781D7482B200399068</string>
+				<string>846B67791D7482B200399068</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>846B67781D7482B200399068</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>WeatherTrendsTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.marydort.WeatherTrendsTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>846B67791D7482B200399068</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>WeatherTrendsTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.marydort.WeatherTrendsTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>846B677A1D7482C600399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>weather_data1.txt</string>
+			<key>path</key>
+			<string>../WeatherTrends/weather_data1.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B677C1D7491DA00399068</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>846B677D1D7491DA00399068</string>
+			</array>
+			<key>currentVersion</key>
+			<string>846B677D1D7491DA00399068</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>WeatherTrendsModel.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>846B677D1D7491DA00399068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>WeatherTrendsModel.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B677E1D7491DA00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B677C1D7491DA00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67971D7497EE00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTDownloader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67981D7497EE00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTDownloader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67991D7497EE00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67981D7497EE00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B679A1D74A32200399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTCoreDataStack.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B679B1D74A32200399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTCoreDataStack.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B679C1D74A32200399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B679B1D74A32200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67CD1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTMonth+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTMonth+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67CE1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTMonth+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTMonth+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67CF1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTMonth.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTMonth.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D01D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTMonth.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTMonth.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D11D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTYear+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTYear+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D21D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTYear+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTYear+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D31D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTYear.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTYear.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D41D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTYear.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTYear.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D51D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTCity+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTCity+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D61D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTCity+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTCity+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D71D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTCity.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTCity.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D81D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTCity.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTCity.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67D91D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTLocation+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTLocation+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67DA1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTLocation+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTLocation+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67DB1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WTLocation.h</string>
+			<key>path</key>
+			<string>WeatherTrends/WTLocation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67DC1D74AA5C00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WTLocation.m</string>
+			<key>path</key>
+			<string>WeatherTrends/WTLocation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67DD1D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67CE1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67DE1D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D01D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67DF1D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D21D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E01D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D41D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E11D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D61D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E21D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D81D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E31D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67DA1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E41D74AA5C00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67DC1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E51D75A04800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSManagedObjectContext+Tests.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67E61D75A04800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSManagedObjectContext+Tests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67E71D75A04800399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67E61D75A04800399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E81D75A3CA00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B677C1D7491DA00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67E91D75A46400399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B676A1D7481DA00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67EA1D75A50A00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B679B1D74A32200399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67EB1D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67CE1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67EC1D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D01D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67ED1D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D21D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67EE1D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D41D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67EF1D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D61D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67F01D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67D81D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67F11D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67DA1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67F21D75A65F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67DC1D74AA5C00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67F31D75A7BB00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B677A1D7482C600399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67F41D75B2BE00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>weather_data2.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67F51D75B2BE00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67F41D75B2BE00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67FC1D75C67000399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTCityAnnotation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67FD1D75C67000399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTCityAnnotation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B67FE1D75C67000399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B67FD1D75C67000399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B67FF1D75CCCE00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTWeatherCityRepository.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68001D75CCCE00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTWeatherCityRepository.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68011D75CCCE00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B68001D75CCCE00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B68021D75DE4900399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTTableViewDataSource.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68031D75DE4900399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTTableViewDataSource.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68041D75DE4900399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B68031D75DE4900399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B68051D75F94800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTYearsWeatherTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68061D75F94800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTYearsWeatherTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68071D75F94800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>WTYearsWeatherTableViewCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68081D75F94800399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B68061D75F94800399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B68091D75F94800399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B68071D75F94800399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B680A1D76017F00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MADFetchedResultsTableViewAdapter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B680B1D76017F00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MADFetchedResultsTableViewAdapter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B680C1D76017F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B680B1D76017F00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B680D1D76158E00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTDetailViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B680E1D76158F00399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTDetailViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B680F1D76158F00399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B680E1D76158F00399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>846B68101D76E2C800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WTMasterTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68111D76E2C800399068</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WTMasterTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>846B68121D76E2C800399068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>846B68111D76E2C800399068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BA47250BCF1C6ABD2CB5D4C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FE2627A8684F68FBEB7E6749</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B99C0D4EFFFDEEBFC1A6267F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-WeatherTrends/Pods-WeatherTrends-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>C6D45AD4315567E9084B4B11</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7F1B9E440D295C751C1624ED</string>
+				<string>5F9DDBD127A5B5130393F7D1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB980D14094017FD47E21C3B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D0EEB4D686A9517DE7113A76</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FE2627A8684F68FBEB7E6749</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FE2627A8684F68FBEB7E6749</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_WeatherTrends.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>846B67461D74819200399068</string>
+</dict>
+</plist>

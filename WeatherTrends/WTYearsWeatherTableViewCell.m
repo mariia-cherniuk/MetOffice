@@ -34,11 +34,11 @@
 - (void)configureWithYear:(WTYear *)year {
 //  KVC magic - http://nshipster.com/kvc-collection-operators/
     
-    double averageMaxTemp = [[year.months valueForKeyPath:@"@avg.maxTemp"] doubleValue];
-    double averageMinTemp = [[year.months valueForKeyPath:@"@avg.minTemp"] doubleValue];
-    double averageAirFrost = [[year.months valueForKeyPath:@"@avg.afDays"] doubleValue];
-    double averageSunshine = [[year.months valueForKeyPath:@"@avg.sunAmount"] doubleValue];
-    double averageRainfall = [[year.months valueForKeyPath:@"@avg.rainAmount"] doubleValue];
+    double averageMaxTemp = [year.averageMaxTemp doubleValue];
+    double averageMinTemp = [year.averageMinTemp doubleValue];
+    double averageAirFrost = [year.averageAFDays doubleValue];
+    double averageSunshine = [year.averageSunshine doubleValue];
+    double averageRainfall = [year.averageRainfall doubleValue];
     
     _yeasNumberLabel.text = [NSString stringWithFormat:@"%@ year", year.number];
     _maxTempLabel.text = [NSString stringWithFormat:@"Max Temp - %2.2f° C", averageMaxTemp];

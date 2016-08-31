@@ -12,6 +12,24 @@
 
 @implementation WTYear
 
-// Insert code here to add functionality to your managed object subclass
+- (NSNumber *)averageMaxTemp {
+    return [self.months valueForKeyPath:@"@avg.maxTemp"];
+}
+
+- (NSNumber *)averageMinTemp {
+    return [self.months valueForKeyPath:@"@avg.minTemp"];
+}
+
+- (NSNumber *)averageAFDays {
+    return [self.months valueForKeyPath:@"@avg.afDays"];
+}
+
+- (NSNumber *)averageRainfall {
+    return [self.months valueForKeyPath:@"@avg.rainAmount"];
+}
+
+- (NSNumber *)averageSunshine {
+    return [self.months valueForKeyPath:@"@avg.sunAmount"];
+}
 
 @end

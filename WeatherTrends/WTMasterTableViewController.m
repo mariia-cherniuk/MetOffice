@@ -26,11 +26,10 @@
 @interface WTMasterTableViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *tableHeaderMapView;
-
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
-@property (nonatomic, readwrite, strong) WTWeatherCityRepository *cityRepository;
 @property (nonatomic, readwrite, strong) WTCity *city;
+@property (nonatomic, readwrite, strong) WTWeatherCityRepository *cityRepository;
 @property (nonatomic, readwrite, strong) WTTableViewDataSource *tableViewDataSource;
 @property (nonatomic, readwrite, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *managedObjectContext;

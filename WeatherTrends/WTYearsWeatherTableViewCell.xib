@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1992 year" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-6G-Pzz">
@@ -24,17 +24,17 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-Q6-Y15">
-                        <rect key="frame" x="101" y="-1" width="211" height="121"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-Q6-Y15">
+                        <rect key="frame" x="101" y="-1" width="211" height="120"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-4H-Sx4">
-                                <rect key="frame" x="0.0" y="0.0" width="71" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-4H-Sx4">
+                                <rect key="frame" x="0.0" y="0.0" width="71" height="20"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kox-Hn-pSr">
-                                <rect key="frame" x="0.0" y="21" width="211" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kox-Hn-pSr">
+                                <rect key="frame" x="0.0" y="20" width="211" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="max_temp" translatesAutoresizingMaskIntoConstraints="NO" id="VmO-uh-GlR">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -52,8 +52,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dLZ-Qs-MgK">
-                                <rect key="frame" x="0.0" y="41" width="211" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dLZ-Qs-MgK">
+                                <rect key="frame" x="0.0" y="40" width="211" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="min_temp" translatesAutoresizingMaskIntoConstraints="NO" id="7cJ-ou-ida">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -70,8 +70,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-p8-KZU">
-                                <rect key="frame" x="0.0" y="61" width="211" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-p8-KZU">
+                                <rect key="frame" x="0.0" y="60" width="211" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air_frost" translatesAutoresizingMaskIntoConstraints="NO" id="sFP-7a-kCq">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -89,8 +89,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-PM-4ri">
-                                <rect key="frame" x="0.0" y="81" width="211" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-PM-4ri">
+                                <rect key="frame" x="0.0" y="80" width="211" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunshine" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-du-WAX">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -108,8 +108,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="eZW-D5-7Sn">
-                                <rect key="frame" x="0.0" y="101" width="211" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="eZW-D5-7Sn">
+                                <rect key="frame" x="0.0" y="100" width="211" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainfall" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-Jp-lM8">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>

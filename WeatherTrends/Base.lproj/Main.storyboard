@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQH-Iy-lZv">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -15,13 +16,137 @@
                     <view key="view" contentMode="scaleToFill" id="VgK-X2-9cD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOi-OU-rVg">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="z5s-rk-Ia5">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1215"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-Zi-vcC">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Max temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-Z6-iSP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGZ-GZ-Aau" customClass="HorizontalBarChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="23" width="320" height="225"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="225" id="uQG-Tj-b8Q"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-Rt-ybH">
+                                                <rect key="frame" x="0.0" y="248" width="320" height="247"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohH-Kl-jB0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gct-B2-EnK" customClass="HorizontalBarChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="22" width="320" height="225"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="225" id="Vb4-gC-Hvt"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-z7-Etb">
+                                                <rect key="frame" x="0.0" y="495" width="320" height="247"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days of Air Frost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGR-WT-fsK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-or-aoM" customClass="LineChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="22" width="320" height="225"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="225" id="QQE-Co-uxh"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="spT-MT-5r7">
+                                                <rect key="frame" x="0.0" y="741" width="320" height="247"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rainfall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-bj-O1s">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL8-Xk-Jdy" customClass="BubbleChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="22" width="320" height="225"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="225" id="1pb-It-rsa"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-J8-bs5">
+                                                <rect key="frame" x="0.0" y="988" width="320" height="228"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunshine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWP-II-F75">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6b1-Tb-NpT" customClass="BarChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="22" width="320" height="206"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="225" id="oTa-9K-VHz"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="z5s-rk-Ia5" firstAttribute="width" secondItem="iOi-OU-rVg" secondAttribute="width" id="Yvr-p4-nho"/>
+                                    <constraint firstAttribute="bottom" secondItem="z5s-rk-Ia5" secondAttribute="bottom" id="ags-2r-z6d"/>
+                                    <constraint firstItem="z5s-rk-Ia5" firstAttribute="top" secondItem="iOi-OU-rVg" secondAttribute="top" id="hWR-h5-Gcl"/>
+                                    <constraint firstAttribute="trailing" secondItem="z5s-rk-Ia5" secondAttribute="trailing" id="way-0C-9e7"/>
+                                    <constraint firstItem="z5s-rk-Ia5" firstAttribute="leading" secondItem="iOi-OU-rVg" secondAttribute="leading" id="xYT-Mr-xKF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iOi-OU-rVg" firstAttribute="top" secondItem="sLN-YY-7vn" secondAttribute="bottom" id="FIl-gf-gqT"/>
+                            <constraint firstItem="iOi-OU-rVg" firstAttribute="leading" secondItem="VgK-X2-9cD" secondAttribute="leading" id="NEh-Wy-iX3"/>
+                            <constraint firstItem="C8k-xa-Wb5" firstAttribute="top" secondItem="iOi-OU-rVg" secondAttribute="bottom" id="aBb-FU-02A"/>
+                            <constraint firstAttribute="trailing" secondItem="iOi-OU-rVg" secondAttribute="trailing" id="l2M-hE-s6V"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OpZ-Ue-ODJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="airFrostChartView" destination="WaI-or-aoM" id="Kr9-0m-p7a"/>
+                        <outlet property="maxTempChartView" destination="wGZ-GZ-Aau" id="Vko-Ab-sl2"/>
+                        <outlet property="minTempChartView" destination="gct-B2-EnK" id="gfu-Zi-O8p"/>
+                        <outlet property="rainfallChartView" destination="KL8-Xk-Jdy" id="eWS-n5-mib"/>
+                        <outlet property="sunshineChartView" destination="6b1-Tb-NpT" id="0Q6-w9-aaY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK5-I2-W4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3119" y="833"/>
+            <point key="canvasLocation" x="3122" y="833"/>
         </scene>
         <!--Master Table View Controller-->
         <scene sceneID="U9R-mr-DVP">
@@ -44,7 +169,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhZ-TN-Xka" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-hU-m98">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-hU-m98">
                     <rect key="frame" x="0.0" y="0.0" width="336" height="150"/>
                 </mapView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bradford" id="Jo8-aQ-UZt">
