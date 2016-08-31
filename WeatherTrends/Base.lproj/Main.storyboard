@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Start View Controller-->
@@ -17,48 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-hU-m98">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                            </mapView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZc-Zw-lRt">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="w0V-88-WDh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4JG-gg-4Oy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </tableView>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4JG-gg-4Oy">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SZc-Zw-lRt" firstAttribute="leading" secondItem="KMd-hU-m98" secondAttribute="leading" id="2oU-6h-dSg"/>
-                            <constraint firstItem="SZc-Zw-lRt" firstAttribute="top" secondItem="KMd-hU-m98" secondAttribute="top" id="6nX-Xi-ufz"/>
-                            <constraint firstItem="KMd-hU-m98" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9q0-DT-1kU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KMd-hU-m98" secondAttribute="bottom" id="CpI-xT-vZC"/>
-                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="leading" secondItem="KMd-hU-m98" secondAttribute="leading" id="D8e-Yd-foY"/>
-                            <constraint firstItem="SZc-Zw-lRt" firstAttribute="trailing" secondItem="KMd-hU-m98" secondAttribute="trailing" id="V3F-St-bp4"/>
-                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="top" secondItem="KMd-hU-m98" secondAttribute="top" id="WDB-fY-hGa"/>
-                            <constraint firstItem="KMd-hU-m98" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ecT-ul-DkT"/>
-                            <constraint firstItem="SZc-Zw-lRt" firstAttribute="bottom" secondItem="KMd-hU-m98" secondAttribute="bottom" id="hSC-TA-zAR"/>
-                            <constraint firstAttribute="trailing" secondItem="KMd-hU-m98" secondAttribute="trailing" id="lNJ-AX-W6a"/>
-                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="bottom" secondItem="KMd-hU-m98" secondAttribute="bottom" id="r9W-PW-Fxi"/>
-                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="trailing" secondItem="KMd-hU-m98" secondAttribute="trailing" id="zck-lX-PI2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4JG-gg-4Oy" secondAttribute="trailing" constant="-20" id="bhx-iR-iDl"/>
+                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="cfm-3h-Q9y"/>
+                            <constraint firstItem="4JG-gg-4Oy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eEI-Sa-eW7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4JG-gg-4Oy" secondAttribute="bottom" id="gaD-x1-EdT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="28W-Ia-wIZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="backgroundMapView" destination="KMd-hU-m98" id="joE-fY-RRy"/>
+                        <outlet property="backgroundImageView" destination="Jo8-aQ-UZt" id="PMX-t4-Kaw"/>
+                        <outlet property="tableHeaderMapView" destination="KMd-hU-m98" id="PzD-fW-PIB"/>
                         <outlet property="yearsWeatherTabelView" destination="4JG-gg-4Oy" id="Rhz-w7-ypu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bradford" id="Jo8-aQ-UZt">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-hU-m98">
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="150"/>
+                </mapView>
             </objects>
             <point key="canvasLocation" x="901" y="833"/>
         </scene>
@@ -101,4 +89,7 @@
             <point key="canvasLocation" x="497" y="833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bradford" width="1824" height="1368"/>
+    </resources>
 </document>

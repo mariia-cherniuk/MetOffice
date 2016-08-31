@@ -13,8 +13,6 @@
 #import "WTYear.h"
 #import "WTMonth.h"
 
-#define BATCH_SIZE 100
-
 @interface WTWeatherParser ()
 
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *writingContext;

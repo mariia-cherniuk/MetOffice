@@ -3,75 +3,176 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="WTYearsWeatherTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="WTYearsWeatherTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="378" height="130"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="WTYearsWeatherTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="WTYearsWeatherTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="378" height="129"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1992 year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-6G-Pzz">
-                        <rect key="frame" x="8" y="34" width="104" height="42"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1992 year" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-6G-Pzz">
+                        <rect key="frame" x="8" y="37" width="75" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="EgL-KH-MGB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-4H-Sx4">
-                        <rect key="frame" x="95" y="0.0" width="67" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max Temp = 20 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-jS-UjG">
-                        <rect key="frame" x="120" y="18" width="118" height="21"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rainfall = 50 mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-nw-mX2">
-                        <rect key="frame" x="120" y="89" width="129" height="21"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min Temp = 2 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-ek-r1r">
-                        <rect key="frame" x="120" y="39" width="121" height="21"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days of Air Frost = 10 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9On-r4-HrD">
-                        <rect key="frame" x="120" y="59" width="162" height="16"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunshine = 100 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mM-tc-7bJ">
-                        <rect key="frame" x="120" y="73" width="166" height="21"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-Q6-Y15">
+                        <rect key="frame" x="101" y="-1" width="211" height="121"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-4H-Sx4">
+                                <rect key="frame" x="0.0" y="0.0" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kox-Hn-pSr">
+                                <rect key="frame" x="0.0" y="21" width="211" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="max_temp" translatesAutoresizingMaskIntoConstraints="NO" id="VmO-uh-GlR">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="4hD-Zh-N2o"/>
+                                            <constraint firstAttribute="height" constant="20" id="Hdd-6U-BNM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Temp = 20 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-jS-UjG">
+                                        <rect key="frame" x="20" y="0.0" width="191" height="20"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dLZ-Qs-MgK">
+                                <rect key="frame" x="0.0" y="41" width="211" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="min_temp" translatesAutoresizingMaskIntoConstraints="NO" id="7cJ-ou-ida">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="NLY-WB-DGw"/>
+                                            <constraint firstAttribute="height" constant="20" id="dKi-NH-v1k"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temp = 2 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-ek-r1r">
+                                        <rect key="frame" x="20" y="0.0" width="191" height="20"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-p8-KZU">
+                                <rect key="frame" x="0.0" y="61" width="211" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air_frost" translatesAutoresizingMaskIntoConstraints="NO" id="sFP-7a-kCq">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="EqH-xr-LgR"/>
+                                            <constraint firstAttribute="height" constant="20" id="cfq-Ui-9Qj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days of Air Frost = 10 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9On-r4-HrD">
+                                        <rect key="frame" x="20" y="0.0" width="191" height="20"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-PM-4ri">
+                                <rect key="frame" x="0.0" y="81" width="211" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunshine" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-du-WAX">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="hzv-8O-Osm"/>
+                                            <constraint firstAttribute="width" constant="20" id="j6g-mQ-Ae6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunshine = 100 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mM-tc-7bJ">
+                                        <rect key="frame" x="20" y="0.0" width="191" height="20"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="eZW-D5-7Sn">
+                                <rect key="frame" x="0.0" y="101" width="211" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainfall" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-Jp-lM8">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="WFV-Qq-5RA"/>
+                                            <constraint firstAttribute="width" constant="20" id="hV4-xe-Oo7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rainfall = 50 mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-nw-mX2">
+                                        <rect key="frame" x="20" y="0.0" width="191" height="20"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mbp-PM-4ri" secondAttribute="trailing" id="ASJ-jW-nDz"/>
+                            <constraint firstAttribute="trailing" secondItem="eZW-D5-7Sn" secondAttribute="trailing" id="Wup-6B-WOB"/>
+                            <constraint firstAttribute="trailing" secondItem="nFa-p8-KZU" secondAttribute="trailing" id="c5Z-dF-wUD"/>
+                            <constraint firstItem="Mbp-PM-4ri" firstAttribute="leading" secondItem="ggL-Q6-Y15" secondAttribute="leading" id="dmQ-Y4-oQ7"/>
+                            <constraint firstItem="dLZ-Qs-MgK" firstAttribute="leading" secondItem="ggL-Q6-Y15" secondAttribute="leading" id="hhK-DE-vxE"/>
+                            <constraint firstAttribute="trailing" secondItem="kox-Hn-pSr" secondAttribute="trailing" id="oYB-yI-Lst"/>
+                            <constraint firstItem="eZW-D5-7Sn" firstAttribute="leading" secondItem="ggL-Q6-Y15" secondAttribute="leading" id="q4u-OW-fyq"/>
+                            <constraint firstItem="nFa-p8-KZU" firstAttribute="leading" secondItem="ggL-Q6-Y15" secondAttribute="leading" id="rIx-GG-jGO"/>
+                            <constraint firstItem="kox-Hn-pSr" firstAttribute="leading" secondItem="ggL-Q6-Y15" secondAttribute="leading" id="teV-aF-Ahh"/>
+                            <constraint firstAttribute="trailing" secondItem="dLZ-Qs-MgK" secondAttribute="trailing" id="yGQ-5V-aWO"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="OPT-6G-Pzz" secondAttribute="leading" id="Ad2-vs-xRe"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ggL-Q6-Y15" secondAttribute="trailing" id="KmS-wC-dD5"/>
+                    <constraint firstItem="OPT-6G-Pzz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yb4-FL-Wwf"/>
+                    <constraint firstItem="ggL-Q6-Y15" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lcc-gg-lNQ"/>
+                    <constraint firstItem="ggL-Q6-Y15" firstAttribute="leading" secondItem="OPT-6G-Pzz" secondAttribute="trailing" constant="18" id="sU5-2g-NnR"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.37354835304054052" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="airFrostImageView" destination="sFP-7a-kCq" id="dZr-4W-d6o"/>
                 <outlet property="airFrostLabel" destination="9On-r4-HrD" id="0BT-Wo-nbq"/>
+                <outlet property="maxTempImageView" destination="VmO-uh-GlR" id="5E2-uM-qnH"/>
                 <outlet property="maxTempLabel" destination="rT9-jS-UjG" id="4MM-sV-0ff"/>
+                <outlet property="minTempImageView" destination="7cJ-ou-ida" id="5VG-2P-RFW"/>
                 <outlet property="minTempLabel" destination="7ip-ek-r1r" id="SsN-Tb-5ME"/>
+                <outlet property="rainfallImageView" destination="cOV-Jp-lM8" id="5rP-Rr-oFU"/>
                 <outlet property="rainfallLabel" destination="Hgp-nw-mX2" id="GCh-3Y-Jo5"/>
+                <outlet property="sunshineImageView" destination="2HI-du-WAX" id="seQ-Wp-FnZ"/>
                 <outlet property="sunshineLabel" destination="3mM-tc-7bJ" id="ctt-du-Yyq"/>
                 <outlet property="yeasNumberLabel" destination="OPT-6G-Pzz" id="9WX-K9-hfn"/>
             </connections>
-            <point key="canvasLocation" x="102" y="319.5"/>
+            <point key="canvasLocation" x="11" y="234"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="air_frost" width="32" height="32"/>
+        <image name="max_temp" width="32" height="32"/>
+        <image name="min_temp" width="64" height="64"/>
+        <image name="rainfall" width="16" height="16"/>
+        <image name="sunshine" width="16" height="16"/>
+    </resources>
 </document>

@@ -23,11 +23,12 @@
 
 #define LATITUDINAL_METERS 12000
 
-@interface WTStartViewController () <UITableViewDelegate>
+@interface WTStartViewController () <UITableViewDelegate, MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *backgroundMapView;
+@property (strong, nonatomic) IBOutlet MKMapView *tableHeaderMapView;
 @property (weak, nonatomic) IBOutlet UITableView *yearsWeatherTabelView;
 
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, readwrite, strong) WTWeatherCityRepository *cityRepository;
 @property (nonatomic, readwrite, strong) WTCity *city;
 @property (nonatomic, readwrite, strong) WTTableViewDataSource *tableViewDataSource;
@@ -99,17 +100,21 @@
 
 - (void)configureViews {
     self.navigationItem.title = _city.name;
-    [self configureBackgroundMapView];
+    [self configureTableHeader];
     [self configureYearsWeatherTabelView];
 }
 
-- (void)configureBackgroundMapView {
+- (void)configureTableHeader {
     CLLocationCoordinate2D locationCoordinate2D = CLLocationCoordinate2DMake([_city.location.latitude doubleValue], [_city.location.longitude doubleValue]);
     MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(locationCoordinate2D, LATITUDINAL_METERS, LATITUDINAL_METERS);
     WTCityAnnotation *annotation = [[WTCityAnnotation alloc] initWithCity:_city];
+    _tableHeaderMapView.delegate = self;
+    _tableHeaderMapView.region = coordinateRegion;
     
-    [_backgroundMapView addAnnotation:annotation];
-    _backgroundMapView.region = coordinateRegion;
+    //To show pin drop animation
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_tableHeaderMapView addAnnotation:annotation];
+    });
 }
 
 - (void)configureYearsWeatherTabelView {
@@ -122,7 +127,8 @@
         
         return cell;
     }];
-    
+    _yearsWeatherTabelView.tableHeaderView = _tableHeaderMapView;
+    _yearsWeatherTabelView.backgroundView = _backgroundImageView;
     _yearsWeatherTabelView.dataSource = _tableViewDataSource;
     _yearsWeatherTabelView.delegate = self;
     [_yearsWeatherTabelView reloadData];
@@ -135,6 +141,24 @@
     
     detailViewController.year = [_tableViewDataSource objectAtIndexPath:indexPath];
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma mark - Map View Delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    static NSString *annotationIdentifier = @"Annotation";
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+        annotationView.animatesDrop = YES;
+        annotationView.pinTintColor = [UIColor greenColor];
+    } else {
+        annotationView.annotation = annotation;
+    }
+    annotationView.enabled = NO;
+    
+    return annotationView;
 }
 
 @end
