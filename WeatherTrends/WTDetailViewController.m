@@ -21,20 +21,59 @@
 @property (weak, nonatomic) IBOutlet BubbleChartView *rainfallChartView;
 @property (weak, nonatomic) IBOutlet BarChartView *sunshineChartView;
 
+@property (strong, nonatomic) BarChartDataSet *dataSet;
 @property (strong, nonatomic) NSArray *sortedMonths;
 
 @end
 
 @implementation WTDetailViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = _year.number;
+    
     [self preapareData];
     [self configureMaxTempChartView];
     [self configureMinTempChartView];
     [self configureAirFrostChartView];
     [self configureRainfallChartView];
     [self configureSunshineChartView];
+}
+
+#pragma mark - protocol UIContentContainer
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    [self setMaxTempChartViewGradientForWidth:size.width];
+    [self setMinTempChartViewGradientForWidth:size.width];
+}
+
+#pragma mark - Private
+
+- (void)setMaxTempChartViewGradientForWidth:(CGFloat)width {
+    UIColor *startColor = [UIColor colorWithRed:0.977 green:0.605 blue:0.000 alpha:1.000];
+    UIColor *endColor = [UIColor colorWithRed:0.675 green:0.157 blue:0.109 alpha:1.000];
+    UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight
+                                                   withFrame:CGRectMake(0, 0, width, 50)
+                                                   andColors:@[startColor, endColor]];
+    BarChartDataSet *maxTempDataSet = (BarChartDataSet *)_maxTempChartView.data.dataSets[0];
+    
+    maxTempDataSet.colors = @[gradientColor];
+}
+
+- (void)setMinTempChartViewGradientForWidth:(CGFloat)width {
+    UIColor *startColor = [UIColor colorWithRed:0.250 green:0.306 blue:0.584 alpha:1.000];
+    UIColor *endColor = [UIColor colorWithRed:0.669 green:0.731 blue:0.949 alpha:1.000];
+    UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight
+                                                    withFrame:CGRectMake(0, 0, width, 50)
+                                                    andColors:@[startColor, endColor]];
+    
+    BarChartDataSet *minTempDataSet = (BarChartDataSet *)_minTempChartView.data.dataSets[0];
+    
+    minTempDataSet.colors = @[gradientColor];
 }
 
 - (void)preapareData {
@@ -82,7 +121,6 @@
     _maxTempChartView.descriptionText = @"";
     _maxTempChartView.legend.textColor = [UIColor whiteColor];
     _maxTempChartView.userInteractionEnabled = NO;
-    [_maxTempChartView animateWithYAxisDuration:2.5];
 
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
     
@@ -94,17 +132,18 @@
         [yVals addObject:entry];
     }
     NSArray *xVals = [_sortedMonths valueForKeyPath:@"number"];
-    BarChartDataSet *dataSet = [[BarChartDataSet alloc] initWithYVals:yVals label:@"Month / °C"];
-    UIColor *startColor = [UIColor colorWithRed:0.977 green:0.605 blue:0.000 alpha:1.000];
-    UIColor *endColor = [UIColor colorWithRed:0.675 green:0.157 blue:0.109 alpha:1.000];
-    UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight
-                                                   withFrame:CGRectMake(0, 0, _maxTempChartView.frame.size.width, 50)
-                                                   andColors:@[startColor, endColor]];
-    dataSet.colors = @[gradientColor];
-    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSet:dataSet];
     
+    _dataSet = [[BarChartDataSet alloc] initWithYVals:yVals label:@"Month / °C"];
+    _dataSet.valueTextColor = [UIColor whiteColor];
+    
+    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSet:_dataSet];
     _maxTempChartView.data = data;
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    [self setMaxTempChartViewGradientForWidth:width];
+    
     _maxTempChartView.backgroundColor = [UIColor clearColor];
+    [_maxTempChartView animateWithYAxisDuration:1];
 }
 
 - (void)configureMinTempChartView {
@@ -146,7 +185,6 @@
     _minTempChartView.descriptionText = @"";
     _minTempChartView.legend.textColor = [UIColor whiteColor];
     _minTempChartView.userInteractionEnabled = NO;
-    [_minTempChartView animateWithYAxisDuration:2.5];
     
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
     
@@ -158,16 +196,16 @@
     }
     NSArray *xVals = [_sortedMonths valueForKeyPath:@"number"];
     BarChartDataSet *dataSet = [[BarChartDataSet alloc] initWithYVals:yVals label:@"Month / °C"];
-    UIColor *startColor = [UIColor colorWithRed:0.250 green:0.306 blue:0.584 alpha:1.000];
-    UIColor *endColor = [UIColor colorWithRed:0.669 green:0.731 blue:0.949 alpha:1.000];
-    UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight
-                                                   withFrame:CGRectMake(0, 0, _maxTempChartView.frame.size.width, 50)
-                                                   andColors:@[startColor, endColor]];
-    dataSet.colors = @[gradientColor];
-    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSet:dataSet];
+    dataSet.valueTextColor = [UIColor whiteColor];
     
+    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSet:dataSet];
     _minTempChartView.data = data;
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    [self setMinTempChartViewGradientForWidth:width];
+    
     _minTempChartView.backgroundColor = [UIColor clearColor];
+    [_minTempChartView animateWithYAxisDuration:1];
 }
 
 - (void)configureAirFrostChartView {
@@ -217,7 +255,7 @@
     UIColor *startColor = [UIColor colorWithRed:0.171 green:0.309 blue:0.378 alpha:1.000];
     UIColor *endColor = [UIColor colorWithRed:0.534 green:0.596 blue:0.815 alpha:1.000];
     UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
-                                                   withFrame:CGRectMake(0, 0, _airFrostChartView.frame.size.width, _airFrostChartView.frame.size.height)
+                                                   withFrame:CGRectMake(0, 0, self.view.frame.size.width, _airFrostChartView.frame.size.height)
                                                    andColors:@[startColor, endColor]];
     dataSet.fillColor = gradientColor;
     dataSet.drawFilledEnabled = YES;
@@ -229,7 +267,7 @@
     _airFrostChartView.descriptionText = @"";
     _airFrostChartView.legend.textColor = [UIColor whiteColor];
     _airFrostChartView.userInteractionEnabled = NO;
-    [_airFrostChartView animateWithYAxisDuration:2.5];
+     [_airFrostChartView animateWithYAxisDuration:1];
 }
 
 - (void)configureRainfallChartView {
@@ -279,7 +317,7 @@
     _rainfallChartView.descriptionText = @"";
     _rainfallChartView.legend.textColor = [UIColor whiteColor];
     _rainfallChartView.userInteractionEnabled = NO;
-    [_rainfallChartView animateWithYAxisDuration:2.5];
+    [_rainfallChartView animateWithYAxisDuration:1];
 }
 
 - (void)configureSunshineChartView {
@@ -326,16 +364,17 @@
     UIColor *startColor = [UIColor colorWithRed:0.853 green:0.422 blue:0.000 alpha:1.000];
     UIColor *endColor = [UIColor colorWithRed:0.986 green:0.780 blue:0.000 alpha:1.000];
     UIColor *gradientColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
-                                                   withFrame:CGRectMake(0, 0, _airFrostChartView.frame.size.width, _airFrostChartView.frame.size.height)
+                                                   withFrame:CGRectMake(0, 0, _airFrostChartView.frame.size.width, self.view.frame.size.height)
                                                    andColors:@[startColor, endColor]];
     dataSet.colors = @[gradientColor];
+    dataSet.valueTextColor = [UIColor whiteColor];
     BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSet:dataSet];
     
     _sunshineChartView.data = data;
     _sunshineChartView.descriptionText = @"";
     _sunshineChartView.legend.textColor = [UIColor whiteColor];
     _sunshineChartView.userInteractionEnabled = NO;
-    [_sunshineChartView animateWithYAxisDuration:2.5];
+    [_sunshineChartView animateWithYAxisDuration:1];
 }
 
 @end
