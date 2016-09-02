@@ -25,10 +25,6 @@
     self.selectedBackgroundView = backgroundView;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-}
-
 #pragma mark - Public
 
 - (void)configureWithYear:(WTYear *)year {

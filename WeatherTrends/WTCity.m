@@ -12,13 +12,22 @@
 
 @implementation WTCity
 
-+ (WTCity *)WT_findFirsInContext:(NSManagedObjectContext *)context {
++ (WTCity *)WT_findFirsInContext:(NSManagedObjectContext *)context forName:(NSString *)name {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
                                               inManagedObjectContext:context];
     request.entity = entity;
-
-    return [[context executeFetchRequest:request error:nil] firstObject];
+    request.predicate = predicate;
+    
+    NSError *error = nil;
+    WTCity *city = [[context executeFetchRequest:request error:&error] firstObject];
+    
+    if (error) {
+        NSLog(@"%@", [error description]);
+    }
+    
+    return city;
 }
 
 @end

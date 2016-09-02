@@ -2,7 +2,7 @@
 //  WTYear+CoreDataProperties.m
 //  WeatherTrends
 //
-//  Created by Mariia Cherniuk on 29.08.16.
+//  Created by Mariia Cherniuk on 02.09.16.
 //  Copyright © 2016 marydort. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,12 @@
 @implementation WTYear (CoreDataProperties)
 
 @dynamic number;
-@dynamic months;
+@dynamic averageMaxTemp;
+@dynamic averageMinTemp;
+@dynamic averageAFDays;
+@dynamic averageRainfall;
+@dynamic averageSunshine;
 @dynamic city;
+@dynamic months;
 
 @end

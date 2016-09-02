@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WTCity : NSManagedObject
 
-+ (WTCity *)WT_findFirsInContext:(NSManagedObjectContext *)context;
++ (WTCity *)WT_findFirsInContext:(NSManagedObjectContext *)context forName:(NSString *)name;
 
 @end
 

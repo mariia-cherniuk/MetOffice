@@ -11,8 +11,7 @@
 #import "WTDownloader.h"
 #import "WTWeatherParser.h"
 #import "WTCity.h"
-
-static NSString *WTBaseURL = @"http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt";
+#import "WTCityData.h"
 
 @interface WTWeatherCityRepository ()
 
@@ -46,24 +45,28 @@ static NSString *WTBaseURL = @"http://www.metoffice.gov.uk/pub/data/weather/uk/c
     return self;
 }
 
-- (void)getCityWithCompletionBlock:(void (^)(WTCity *city, NSError *error))completionBlock {
-    [WTDownloader downloadDataByURL:WTBaseURL completionBlock:^(NSData *data, NSError *error) {
-        WTWeatherParser *weatherParser = [[WTWeatherParser alloc] initWithManagedObjectContext:_writingContext];
-        WTCity *city = [weatherParser parseWeatherData:data];
-        NSManagedObjectID *cityId = city.objectID;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            WTCity *city = [_mainContext objectWithID:cityId];
+- (void)getCityForCityData:(WTCityData *)cityData completionBlock:(void (^)(WTCity *city, NSError *error))completionBlock {
+    WTCity *city = [WTCity WT_findFirsInContext:_mainContext forName:cityData.name];
+    
+    if (city) {
+        if (completionBlock) {
+            completionBlock(city, nil);
+        }
+    } else {
+        [WTDownloader downloadDataByURL:cityData.url completionBlock:^(NSData *data, NSError *error) {
+            WTWeatherParser *weatherParser = [[WTWeatherParser alloc] initWithManagedObjectContext:_writingContext];
+            WTCity *city = [weatherParser parseWeatherData:data];
+            NSManagedObjectID *cityId = city.objectID;
             
-            if (completionBlock) {
-                completionBlock(city, error);
-            }
-        });
-    }];
-}
-
-- (WTCity *)currentCity {
-    return [WTCity WT_findFirsInContext:_mainContext];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                WTCity *city = [_mainContext objectWithID:cityId];
+                
+                if (completionBlock) {
+                    completionBlock(city, error);
+                }
+            });
+        }];
+    }
 }
 
 @end

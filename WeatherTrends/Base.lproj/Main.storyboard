@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQH-Iy-lZv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vlc-YG-bpf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -95,7 +95,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-J8-bs5">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-J8-bs5">
                                                 <rect key="frame" x="0.0" y="989" width="320" height="228"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunshine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWP-II-F75">
@@ -146,16 +146,183 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK5-I2-W4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3122" y="833"/>
+            <point key="canvasLocation" x="3498" y="833"/>
         </scene>
-        <!--Master Table View Controller-->
+        <!--Sort View Controller-->
+        <scene sceneID="fT5-lp-XW8">
+            <objects>
+                <viewController storyboardIdentifier="WTFilterViewController" id="dB9-6g-XGd" customClass="WTSortViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jqT-dp-cHk"/>
+                        <viewControllerLayoutGuide type="bottom" id="mKt-v7-tq6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8RW-EW-B6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-nU-rdd">
+                                <rect key="frame" x="8" y="24" width="304" height="292"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-bW-3R1">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="32"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBw-A2-VW2">
+                                                <rect key="frame" x="0.0" y="16" width="304" height="0.0"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-ij-63f">
+                                                        <rect key="frame" x="120" y="-10" width="64" height="20"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                        <color key="textColor" red="0.80000000000000004" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="XfQ-ms-KgY">
+                                                        <rect key="frame" x="192" y="-8" width="16" height="16"/>
+                                                        <color key="tintColor" red="0.80000000000000004" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="XfQ-ms-KgY" firstAttribute="centerY" secondItem="HBw-A2-VW2" secondAttribute="centerY" id="2Sh-9X-DA9"/>
+                                                    <constraint firstItem="XfQ-ms-KgY" firstAttribute="leading" secondItem="j1u-ij-63f" secondAttribute="trailing" constant="8" id="fxf-4h-afF"/>
+                                                    <constraint firstItem="j1u-ij-63f" firstAttribute="centerY" secondItem="HBw-A2-VW2" secondAttribute="centerY" id="hyx-wu-eBM"/>
+                                                    <constraint firstAttribute="centerX" secondItem="j1u-ij-63f" secondAttribute="centerX" id="qgg-CF-Aem"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="2tw-sJ-3QL">
+                                        <rect key="frame" x="0.0" y="32" width="304" height="34"/>
+                                        <segments>
+                                            <segment title="" image="descending"/>
+                                            <segment title="" image="ascending"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.80000000000000004" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="ascendingDescendingSegmentedControlPressed:" destination="dB9-6g-XGd" eventType="valueChanged" id="uMF-Fz-Zy0"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBB-8R-PvE">
+                                        <rect key="frame" x="0.0" y="65" width="304" height="32"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Year" image="calendar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yearButtonPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="l2J-e7-HPx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmV-Lu-6XL">
+                                        <rect key="frame" x="0.0" y="97" width="304" height="33"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.85043728351593018" green="0.21816034615039825" blue="0.15920260548591614" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Max Temperature" image="max_temp64">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="maxTempPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="3Sa-O5-299"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-g4-HZv">
+                                        <rect key="frame" x="0.0" y="130" width="304" height="32"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Min Temperature" image="min_temp64">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="minTempPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="h8L-Qk-Jwk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahj-Co-QWF">
+                                        <rect key="frame" x="0.0" y="162" width="304" height="33"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Air Frost" image="air_frost">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="airFrostPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="Q1t-tR-vac"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5j-bz-813">
+                                        <rect key="frame" x="0.0" y="195" width="304" height="32"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Rainfall" image="rainfall48">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rainfallPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="AYQ-ZF-tjr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ng-hg-1PK">
+                                        <rect key="frame" x="0.0" y="227" width="304" height="33"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <color key="tintColor" red="0.98624199628829956" green="0.7796865701675415" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Sunshine" image="sunshine48">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sunshinePressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="HxG-G0-JNY"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="neE-UN-mzx">
+                                        <rect key="frame" x="0.0" y="260" width="304" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVy-k2-kO5">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="32"/>
+                                                <color key="tintColor" red="0.80000000000000004" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="doneButtonPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="Gty-ma-2BH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqp-oF-aIr">
+                                                <rect key="frame" x="152" y="0.0" width="152" height="32"/>
+                                                <color key="tintColor" red="0.80000000000000004" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="canselButtonPressed:" destination="dB9-6g-XGd" eventType="touchUpInside" id="FzH-jj-OPV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mKt-v7-tq6" firstAttribute="top" secondItem="lhW-nU-rdd" secondAttribute="bottom" constant="4" id="Pdb-g1-Qxm"/>
+                            <constraint firstItem="lhW-nU-rdd" firstAttribute="leading" secondItem="8RW-EW-B6Y" secondAttribute="leading" constant="8" id="TEH-Km-VMV"/>
+                            <constraint firstItem="lhW-nU-rdd" firstAttribute="top" secondItem="jqT-dp-cHk" secondAttribute="bottom" constant="4" id="XMp-1b-cKl"/>
+                            <constraint firstAttribute="trailing" secondItem="lhW-nU-rdd" secondAttribute="trailing" constant="8" id="zJR-Tn-Gb8"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="320"/>
+                    <connections>
+                        <outlet property="filterResultImageView" destination="XfQ-ms-KgY" id="95v-ZG-2ci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc3-XK-2bL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3888" y="856"/>
+        </scene>
+        <!--City Years Table View Controller-->
         <scene sceneID="U9R-mr-DVP">
             <objects>
-                <tableViewController id="3bC-p6-oKF" customClass="WTMasterTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WTMasterTableViewController" id="3bC-p6-oKF" customClass="WTCityYearsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="bej-rS-sbI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="dataSource" destination="3bC-p6-oKF" id="jgc-3S-g4s"/>
                             <outlet property="delegate" destination="3bC-p6-oKF" id="rwL-dL-Nq8"/>
@@ -173,33 +340,76 @@
                     <rect key="frame" x="0.0" y="0.0" width="336" height="150"/>
                 </mapView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bradford" id="Jo8-aQ-UZt">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="322" height="220"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="3074" y="833"/>
+        </scene>
+        <!--Meteorological Station Table View Controller-->
+        <scene sceneID="eZ8-Sv-wjS">
+            <objects>
+                <tableViewController storyboardIdentifier="WTMeteorologicalStationTableViewController" id="mt8-Y0-3hd" customClass="WTMeteorologicalStationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TAh-S5-2v1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mt8-Y0-3hd" id="wDt-i6-ZSp"/>
+                            <outlet property="delegate" destination="mt8-Y0-3hd" id="ahM-Cr-XjW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hr0-23-Na6"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="MeF-gU-hIi" id="yEC-By-OVQ"/>
+                        <outlet property="searchBar" destination="pNa-ev-LWd" id="TeL-mU-B3O"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awM-br-iYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" barStyle="black" placeholder="Enter station name" id="pNa-ev-LWd">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bradford" id="MeF-gU-hIi">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="2695" y="833"/>
+            <point key="canvasLocation" x="2657" y="833"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="DDg-bc-AbO">
+        <scene sceneID="6pJ-9s-ef1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DQH-Iy-lZv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vlc-YG-bpf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sQx-P7-PeS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8j3-q5-dnc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3bC-p6-oKF" kind="relationship" relationship="rootViewController" id="DYx-XF-Pft"/>
+                        <segue destination="mt8-Y0-3hd" kind="relationship" relationship="rootViewController" id="gO7-NK-xOl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NuR-8s-qOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXe-Pc-yqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="833"/>
+            <point key="canvasLocation" x="2241" y="833"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bradford" width="1824" height="1368"/>
+        <image name="air_frost" width="32" height="32"/>
+        <image name="ascending" width="24" height="24"/>
+        <image name="bradford" width="550" height="309"/>
+        <image name="calendar" width="16" height="16"/>
+        <image name="descending" width="24" height="24"/>
+        <image name="max_temp64" width="32" height="32"/>
+        <image name="min_temp64" width="32" height="32"/>
+        <image name="rainfall48" width="24" height="24"/>
+        <image name="sunshine48" width="24" height="24"/>
     </resources>
 </document>

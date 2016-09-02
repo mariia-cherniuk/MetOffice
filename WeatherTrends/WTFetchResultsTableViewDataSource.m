@@ -1,21 +1,21 @@
 //
-//  WTTableViewDataSource.m
+//  WTFetchResultsTableViewDataSource.m
 //  WeatherTrends
 //
 //  Created by Mariia Cherniuk on 30.08.16.
 //  Copyright © 2016 marydort. All rights reserved.
 //
 
-#import "WTTableViewDataSource.h"
+#import "WTFetchResultsTableViewDataSource.h"
 
-@interface WTTableViewDataSource ()
+@interface WTFetchResultsTableViewDataSource ()
 
 @property (nonatomic, readwrite, copy) CellForRowAtIndexPathBlock cellForRowAtIndexPathBlock;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-@implementation WTTableViewDataSource
+@implementation WTFetchResultsTableViewDataSource
 
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)controller
                       cellForRowAtIndexPathBlock:(CellForRowAtIndexPathBlock)cellForRowAtIndexPathBlock {

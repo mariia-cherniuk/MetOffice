@@ -1,5 +1,5 @@
 //
-//  WTTableViewDataSource.h
+//  WTFetchResultsTableViewDataSource.h
 //  WeatherTrends
 //
 //  Created by Mariia Cherniuk on 30.08.16.
@@ -11,7 +11,7 @@
 
 typedef UITableViewCell* (^CellForRowAtIndexPathBlock)(UITableView *tableView, NSIndexPath *indexPath, id object);
 
-@interface WTTableViewDataSource : NSObject <UITableViewDataSource>
+@interface WTFetchResultsTableViewDataSource : NSObject <UITableViewDataSource>
 
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)controller
                       cellForRowAtIndexPathBlock:(CellForRowAtIndexPathBlock)cellForRowAtIndexPathBlock;

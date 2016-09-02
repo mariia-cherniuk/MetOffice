@@ -40,7 +40,7 @@
     [_writingContext performBlockAndWait:^{
         NSString *weatherDataString = [[NSString alloc] initWithData:weatherData encoding:NSUTF8StringEncoding];
         NSString *cityName = [self getCityNameFromWeatherDataString:weatherDataString];
-        city = [self cityByName:cityName];
+        city = [WTCity WT_findFirsInContext:_writingContext forName:city.name];
         
         if (!city) {
             NSString *locationSubstring = [self getLocationStringFromWeatherDataString:weatherDataString];
@@ -134,23 +134,42 @@
     
     for (NSInteger i = 0; i < componentsCount; i++) {
         NSArray *yearMonthComponents = [self seperatedComponentsFromString:components[i]];
-        
+        //incorrect format for City: Dunstaffnage year: 2004 month: 5 tmax column
+        //City: Cwmystwyth "Site closed" in the bottom of file
+        if (yearMonthComponents.count < 7) {
+            continue;
+        }
         if (![currentYearNumber isEqualToString:yearMonthComponents[0]]) {
             year = [NSEntityDescription insertNewObjectForEntityForName:@"WTYear"
                                                  inManagedObjectContext:_writingContext];
-            
             year.number = yearMonthComponents[0];
             currentYearNumber = year.number;
             
             [yearsSet addObject:year];
         }
-        [year addMonthsObject:[self parsedMonthFromComponents:yearMonthComponents]];
+        WTMonth *month = [self parsedMonthFromComponents:yearMonthComponents];
+        if (month) {
+            [year addMonthsObject:month];
+        }
     }
+    for (WTYear *year in yearsSet) {
+        year.averageMaxTemp = [year.months valueForKeyPath:@"@avg.maxTemp"];
+        year.averageMinTemp = [year.months valueForKeyPath:@"@avg.minTemp"];
+        year.averageAFDays = [year.months valueForKeyPath:@"@avg.afDays"];
+        year.averageRainfall = [year.months valueForKeyPath:@"@avg.rainAmount"];
+        year.averageSunshine = [year.months valueForKeyPath:@"@avg.sunAmount"];
+    }
+    
     [city addYears:yearsSet];
     [WTCoreDataStack saveChangesInContex:_writingContext];
 }
 
 - (WTMonth *)parsedMonthFromComponents:(NSArray *)components {
+    //incorrect format for City: Dunstaffnage year: 2004 month: 5 tmax column
+//    if (components.count < 7) {
+//        return nil;
+//    }
+    
     WTMonth *month = [NSEntityDescription insertNewObjectForEntityForName:@"WTMonth"
                                                    inManagedObjectContext:_writingContext];
    
@@ -162,24 +181,6 @@
     month.sunAmount = components[6];
 
     return month;
-}
-
-- (WTCity *)cityByName:(NSString *)cityName {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", cityName];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WTCity"
-                                              inManagedObjectContext:_writingContext];
-    request.entity = entity;
-    request.predicate = predicate;
-    
-    NSError *error = nil;
-    WTCity *city = [[_writingContext executeFetchRequest:request error:&error] firstObject];
-    
-    if (error) {
-        NSLog(@"%@", [error description]);
-    }
-    
-    return city;
 }
 
 #pragma mark - Helper

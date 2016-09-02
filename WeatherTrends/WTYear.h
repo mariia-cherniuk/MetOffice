@@ -15,13 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WTYear : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
-
-- (NSNumber *)averageMaxTemp;
-- (NSNumber *)averageMinTemp;
-- (NSNumber *)averageAFDays;
-- (NSNumber *)averageRainfall;
-- (NSNumber *)averageSunshine;
 
 
 @end

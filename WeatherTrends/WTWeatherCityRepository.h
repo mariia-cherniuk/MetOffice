@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 @class WTCity;
+@class WTCityData;
 
 @interface WTWeatherCityRepository : NSObject
 
@@ -16,8 +17,7 @@
 - (instancetype)initWithMainContext:(NSManagedObjectContext *)mainContext
                                   writingContext:(NSManagedObjectContext *)writingContext;
 
-- (void)getCityWithCompletionBlock:(void (^)(WTCity *city, NSError *error))completionBlock;
-
-- (WTCity *)currentCity;
+- (void)getCityForCityData:(WTCityData *)cityData
+           completionBlock:(void (^)(WTCity *city, NSError *error))completionBlock;
 
 @end

@@ -84,6 +84,11 @@
     for (WTYear *year in years) {
         XCTAssertNotNil(year.number);
         XCTAssertNotNil(year.months);
+        XCTAssertNotNil(year.averageMaxTemp);
+        XCTAssertNotNil(year.averageMinTemp);
+        XCTAssertNotNil(year.averageAFDays);
+        XCTAssertNotNil(year.averageRainfall);
+        XCTAssertNotNil(year.averageSunshine);
         
         for (WTMonth *month in year.months) {
             [self checkFieldsForMonth:month];
