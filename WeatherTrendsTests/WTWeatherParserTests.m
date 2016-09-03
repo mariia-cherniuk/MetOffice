@@ -14,13 +14,13 @@
 #import "WTLocation.h"
 #import "WTMonth.h"
 
-@interface WeatherTrendsTests : XCTestCase
+@interface WTWeatherParserTests : XCTestCase
 
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *context;
 
 @end
 
-@implementation WeatherTrendsTests
+@implementation WTWeatherParserTests
 
 - (void)setUp {
     [super setUp];
