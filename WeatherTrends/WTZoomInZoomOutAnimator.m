@@ -24,10 +24,10 @@
     if (isPresenting) {
         UIView *container = [transitionContext containerView];
         toViewController.view.layer.affineTransform = CGAffineTransformMakeScale(3.f, 3.f);
-        toViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
         toViewController.view.alpha = 0.f;
         toViewController.view.layer.cornerRadius = 8.f;
         container.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.399];
+        toViewController.view.alpha = 0.f;
         
         [container addSubview:toViewController.view];
         [self createConstraintSubview:toViewController.view superview:container];
@@ -58,6 +58,7 @@
 
 - (void)createConstraintSubview:(UIView *)subview superview:(UIView *)superview {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    subview.translatesAutoresizingMaskIntoConstraints = NO;
     
     CGFloat topConstant = [self topConstantForOrientation:orientation];
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:subview

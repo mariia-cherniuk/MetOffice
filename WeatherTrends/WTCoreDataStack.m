@@ -81,9 +81,7 @@
                                                            error:&error]) {
         NSLog(@"%@", [error description]);
     }
-    
-    NSLog(@"storeURL = %@", storeURL);
-    
+      
     return _persistentStoreCoordinator;
 }
 
