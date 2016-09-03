@@ -31,6 +31,8 @@
     return self;
 }
 
+#pragma mark - Parser
+
 - (WTCity *)parseWeatherData:(NSData *)weatherData {
     if (!weatherData) {
         return nil;
@@ -57,43 +59,6 @@
         }
     }];
     return city;
-}
-
-- (NSString *)getCityNameFromWeatherDataString:(NSString *)string {
-    NSRange range = [string rangeOfString:@"\n"];
-    
-    if (range.location != NSNotFound) {
-         return [string substringToIndex:range.location];
-    }
-    
-    return nil;
-}
-
-- (NSString *)getLocationStringFromWeatherDataString:(NSString *)string {
-    NSRange range = [string rangeOfString:@"Location"];
-    NSString *result;
-    
-    if (range.location != NSNotFound) {
-        result = [string substringFromIndex:range.location];
-        
-        NSRange range = [result rangeOfString:@"Estimated"];
-        
-        if (range.location != NSNotFound) {
-            return [result substringToIndex:range.location];
-        }
-    }
-    
-    return nil;
-}
-
-- (NSString *)getYearMonthStringFromWeatherDataString:(NSString *)string {
-    NSRange range = [string rangeOfString:@"hours\n"];
-    
-    if (range.location != NSNotFound) {
-        return [string substringFromIndex:range.location];
-    }
-
-    return nil;
 }
 
 - (WTLocation *)parsedLacationFromComponents:(NSString *)components {
@@ -165,11 +130,6 @@
 }
 
 - (WTMonth *)parsedMonthFromComponents:(NSArray *)components {
-    //incorrect format for City: Dunstaffnage year: 2004 month: 5 tmax column
-//    if (components.count < 7) {
-//        return nil;
-//    }
-    
     WTMonth *month = [NSEntityDescription insertNewObjectForEntityForName:@"WTMonth"
                                                    inManagedObjectContext:_writingContext];
    
@@ -181,6 +141,45 @@
     month.sunAmount = components[6];
 
     return month;
+}
+
+#pragma mark - Prepare data
+
+- (NSString *)getCityNameFromWeatherDataString:(NSString *)string {
+    NSRange range = [string rangeOfString:@"\n"];
+    
+    if (range.location != NSNotFound) {
+        return [string substringToIndex:range.location];
+    }
+    
+    return nil;
+}
+
+- (NSString *)getLocationStringFromWeatherDataString:(NSString *)string {
+    NSRange range = [string rangeOfString:@"Location"];
+    NSString *result;
+    
+    if (range.location != NSNotFound) {
+        result = [string substringFromIndex:range.location];
+        
+        NSRange range = [result rangeOfString:@"Estimated"];
+        
+        if (range.location != NSNotFound) {
+            return [result substringToIndex:range.location];
+        }
+    }
+    
+    return nil;
+}
+
+- (NSString *)getYearMonthStringFromWeatherDataString:(NSString *)string {
+    NSRange range = [string rangeOfString:@"hours\n"];
+    
+    if (range.location != NSNotFound) {
+        return [string substringFromIndex:range.location];
+    }
+    
+    return nil;
 }
 
 #pragma mark - Helper

@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WTYear : NSManagedObject
 
 
-
 @end
 
 NS_ASSUME_NONNULL_END

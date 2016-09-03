@@ -24,6 +24,8 @@
 
 @implementation WTMeteorologicalStationTableViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Meteorological Stations";
@@ -35,6 +37,8 @@
     _meteorologicalStations = [WTCityData citiesData];
     [self configureTabelView];
 }
+
+#pragma mark - Private
 
 - (void)configureTabelView {
     _dataSource = [[WTArrayTableViewDataSource alloc] initWithObjects:_meteorologicalStations cellForRowAtIndexPathBlock:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath, id object) {

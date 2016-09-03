@@ -28,6 +28,8 @@
     return self;
 }
 
+#pragma mark - Public
+
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
     if (_searchBarActive) {
         return _filteredList[indexPath.row];

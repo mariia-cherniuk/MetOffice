@@ -16,7 +16,6 @@
 
 - (instancetype)initWithMainContext:(NSManagedObjectContext *)mainContext
                                   writingContext:(NSManagedObjectContext *)writingContext;
-
 - (void)getCityForCityData:(WTCityData *)cityData
            completionBlock:(void (^)(WTCity *city, NSError *error))completionBlock;
 

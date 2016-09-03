@@ -24,6 +24,8 @@
 
 @implementation WTSortViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 

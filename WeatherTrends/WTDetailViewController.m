@@ -42,7 +42,6 @@
     [self configureSunshineChartView];
 }
 
-
 #pragma mark - protocol UIContentContainer
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {

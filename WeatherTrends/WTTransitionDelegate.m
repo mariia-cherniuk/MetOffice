@@ -10,6 +10,8 @@
 
 @implementation WTTransitionDelegate
 
+#pragma mark - UIViewControllerTransitioningDelegate
+
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     return _animator;
 }

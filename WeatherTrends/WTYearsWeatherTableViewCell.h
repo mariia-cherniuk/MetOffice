@@ -21,8 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *airFrostImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *sunshineImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *rainfallImageView;
-
 @property (weak, nonatomic) IBOutlet UIImageView *minTempImageView;
+
 - (void)configureWithYear:(WTYear *)year;
 
 @end

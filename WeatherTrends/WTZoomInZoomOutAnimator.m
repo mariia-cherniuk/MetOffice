@@ -10,6 +10,8 @@
 
 @implementation WTZoomInZoomOutAnimator
 
+#pragma mark - UIViewControllerAnimatedTransitioning
+
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
     return 0.3f;
 }
@@ -47,6 +49,12 @@
                          }];
     }
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Private
 
 - (void)createConstraintSubview:(UIView *)subview superview:(UIView *)superview {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -143,10 +151,6 @@
     } else {
         return -30.f;
     }
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

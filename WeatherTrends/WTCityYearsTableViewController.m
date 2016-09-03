@@ -44,6 +44,8 @@
 
 @implementation WTCityYearsTableViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"slider"] style:UIBarButtonItemStylePlain target:self action:@selector(sliderButtonPressed:)];
@@ -125,7 +127,7 @@
     }];
 }
 
-#pragma mark - Configure Views
+#pragma mark - Private
 
 - (void)configureViews {
     [self configureTableHeader];
