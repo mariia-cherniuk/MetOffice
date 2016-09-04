@@ -12,8 +12,8 @@
 - Mean minimum temperature (tmin);
 - Days of air frost (af);
 - Total rainfall (rain);
-- Total sunshine duration (rain).
-- Sort by year, average: tmax, tmin, af, rain, rain;
+- Total sunshine duration (sun).
+- Sort by year, average: tmax, tmin, af, rain, sun;
 - Statistic charts for each year;
 - Display station location on map;
 
